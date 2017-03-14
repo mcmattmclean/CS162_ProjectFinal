@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include "util.hpp"
 
 using std::ifstream;
 using std::cout;
@@ -13,35 +14,9 @@ int main(){
   string test1 = "graphics/setup.txt";
   string test2 = "graphics/basic-room.txt";
 
-  ifstream textImg;
-  char input;
-
-  for(int i = 0; i < 800; i++){
-    cout << endl;
-  }
-
-  cout << endl;
-  textImg.open(test1);
-  while(textImg.get(input)){
-    std::cout << input;
-  }
-  textImg.close();
-  cout << endl;
-
+  printGraphic(test1);
   cin.get();
-
-  for(int i = 0; i < 800; i++){
-    cout << endl;
-  }
-
-  cout << endl;
-  textImg.open(test2);
-  while(textImg.get(input)){
-    std::cout << input;
-  }
-  textImg.close();
-  cout << endl;
-
+  printGraphic(test2);
 
   return 0;
 }
