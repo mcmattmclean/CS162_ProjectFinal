@@ -75,10 +75,11 @@ void Room::printState(){
   for(int i = 0; i < padding; i++){
     cout << endl;
   }
-  printMenu();
+  cout << getBlurb() << endl;
   for(int i = 0; i < padding; i++){
     cout << endl;
   }
+  printMenu();
 }
 
 void Room::addMenu(string toAdd){

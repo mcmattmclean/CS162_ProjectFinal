@@ -120,4 +120,8 @@ void Game::refresh(){
   currentRoom->printState();
   choice = validateInt(1, 2);
 
+  currentRoom->update();
+  currentRoom->printState();
+  choice = validateInt(1, 2);
+
 }
