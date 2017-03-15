@@ -6,6 +6,27 @@
 ******************************************************************************/
 #include "util.hpp"
 
+/******************************************************************************
+* Function: getNumLines()
+*
+* Description: Opens file matching passed string, determines how many lines,
+**  then returns this number. Used to determine spacing of user menu with
+**  graphics.
+******************************************************************************/
+int getNumLines(string fileName){
+  int length = 0;
+  ifstream graphic;
+  string line;
+  graphic.open(fileName);
+
+  while (getline(graphic, line)){
+    length++;
+  }
+
+  graphic.close();
+
+  return length;
+}
 
 /******************************************************************************
 * Function: printGraphic()

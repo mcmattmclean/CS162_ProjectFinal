@@ -19,11 +19,13 @@
 
 class Game{
 private:
+  const int windowHeight = 41;
   Player* player = nullptr;
 public:
   Game();
   bool startGame();
   void run();
+  void refresh();
 
 };
 

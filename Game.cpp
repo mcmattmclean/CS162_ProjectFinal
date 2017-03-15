@@ -31,12 +31,16 @@ bool Game::startGame(){
   cout << " >> ";
   cin.get();  //Wait for enter character
 
-
   int choice = -1;
   bool play;
+  int numPadding = (windowHeight - getNumLines("graphics/main-menu.txt")) \
+  / 2 - 2;
 
   do{
     printGraphic("graphics/main-menu.txt");
+    for(int i = 0; i < numPadding; i ++){
+      cout << endl;
+    }
     cout << " 1) Play Game" << endl << " 2) Quit" << endl;
     cout << " >>  ";
     choice = validateInt(1, 2);
@@ -62,4 +66,8 @@ void Game::run(){
 
 
 
+}
+
+void Game::refresh(){
+  
 }

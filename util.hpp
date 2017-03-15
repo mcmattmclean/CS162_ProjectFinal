@@ -6,7 +6,7 @@
 ******************************************************************************/
 
 #ifndef UTIL_HPP
-#define UITL_HPP
+#define UTIL_HPP
 
 #include <iostream>
 #include <string>
@@ -17,8 +17,10 @@ using std::cout;
 using std::cin;
 using std::endl;
 using std::ifstream;
+using std::getline;
 
 int validateInt(int, int);
 void printGraphic(string);
+int getNumLines(string);
 
 #endif
