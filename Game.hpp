@@ -26,6 +26,7 @@
 class Game{
 private:
   const int windowHeight = 40;
+  bool gameOver = false;
   Player* player = nullptr;
   Room* currentRoom = nullptr;
   Room* courtyard = nullptr;

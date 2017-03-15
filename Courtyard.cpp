@@ -20,13 +20,11 @@ void Courtyard::update(){
   }
   else if(gatePresentOpen){
     setBlurb("The massive gateway to somewhere else pulses, filling you with dread.");
-    gatePresentOpen = false;//test
-    gatePresentClosed = true;//test
   }
   else if(firstVisit){
     firstVisit = false;
     gatePresentOpen = true;
     setGraphic("graphics/courtyard-gate.txt");
-    setBlurb("Before you take a single step, you're ");
+    setBlurb("Before you take a single step, a terrible gate appears, emanating death. The buildings \nnear it sprout giant tentacles, and you feel your sanity slipping away as the seconds\npass.");
   }
 }

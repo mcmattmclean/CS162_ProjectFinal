@@ -15,7 +15,7 @@
 **  objects.
 ******************************************************************************/
 Game::Game(){
-  player = new Player("Davey");
+  player = new Player();
 
   //Initialize all rooms
   courtyard = new Courtyard();
@@ -104,8 +104,11 @@ bool Game::startGame(){
 **  until the game is completed.
 ******************************************************************************/
 void Game::run(){
+  // while(!gameOver){
+  //   currentRoom->printState();
+  //   currentRoom->update();
+  // }
   refresh();
-
 }
 
 void Game::refresh(){

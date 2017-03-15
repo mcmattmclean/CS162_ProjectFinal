@@ -7,14 +7,5 @@
 ******************************************************************************/
 #include "Player.hpp"
 
-Player::Player(string nameIn){
-  setName(nameIn);
-}
-
-void Player::setName(string nameIn){
-  name = nameIn;
-}
-
-string Player::getName(){
-  return name;
+Player::Player(){
 }

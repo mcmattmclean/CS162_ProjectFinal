@@ -24,7 +24,7 @@ private:
   string name = "";
   string graphic = "graphics/test-room.txt";
   string blurb = "";
-  vector<string> menuList {"Travel", "Check Inventory"};
+  vector<string> menuList {"Travel", "Explore", "Check Inventory"};
 public:
   Room();
   virtual ~Room();
