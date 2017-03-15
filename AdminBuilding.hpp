@@ -1,19 +1,19 @@
 /******************************************************************************
-* Name: Courtyard.hpp
+* Name: AdminBuilding.hpp
 * Date: 14 Mar 2017
 * Author: Matthew McLean
-* Description: Courtyard class header file, contains protected member
+* Description: AdminBuilding class header file, contains protected member
 **  variable declarations and member function prototypes.
 ******************************************************************************/
-#ifndef COURTYARD_HPP
-#define COURTYARD_HPP
+#ifndef ADMINBUILDING_HPP
+#define ADMINBUILDING_HPP
 
 #include "Room.hpp"
 
-class Courtyard : public Room{
+class AdminBuilding : public Room{
 private:
 public:
-  Courtyard();
+  AdminBuilding();
 
 };
 

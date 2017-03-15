@@ -50,3 +50,19 @@ void Room::setName(string nameIn){
 string Room::getName(){
   return name;
 }
+
+void Room::setGraphic(string graphicIn){
+    graphic = graphicIn;
+}
+
+string Room::getGraphic(){
+  return graphic;
+}
+
+void Room::setBlurb(string blurbIn){
+  blurb = blurbIn;
+}
+
+string Room::getBlurb(){
+  return blurb;
+}

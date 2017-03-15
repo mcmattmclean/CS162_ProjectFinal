@@ -15,12 +15,20 @@
 #include "Player.hpp"
 #include "Room.hpp"
 #include "Courtyard.hpp"
+#include "Gate.hpp"
+#include "Library.hpp"
+#include "SecretRoom.hpp"
+#include "ScienceBuilding.hpp"
+#include "AdminBuilding.hpp"
+#include "ProfessorRoom.hpp"
 #include "Game.hpp"
 
 class Game{
 private:
-  const int windowHeight = 41;
+  const int windowHeight = 40;
   Player* player = nullptr;
+  Room* currentLocation = nullptr;
+
 public:
   Game();
   bool startGame();

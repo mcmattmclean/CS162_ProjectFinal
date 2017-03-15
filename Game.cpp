@@ -15,6 +15,9 @@
 **  objects.
 ******************************************************************************/
 Game::Game(){
+  player = new Player("Davey");
+  Room* courtyard = new Courtyard();
+  Room* gate = new Gate();
 
 }
 
@@ -69,5 +72,5 @@ void Game::run(){
 }
 
 void Game::refresh(){
-  
+
 }
