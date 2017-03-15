@@ -110,17 +110,14 @@ void Game::run(){
 
 void Game::refresh(){
   currentRoom->printState();
-  currentRoom->update();
-  cin.ignore('\n');
-  cin.get();
-  currentRoom->printState();
-  currentRoom->update();
-  cin.ignore('\n');
-  cin.get();
-  currentRoom->printState();
-  currentRoom->update();
-  cin.ignore('\n');
-  cin.get();
+  int choice = validateInt(1, 2);
 
+  currentRoom->update();
+  currentRoom->printState();
+  choice = validateInt(1, 2);
+
+  currentRoom->update();
+  currentRoom->printState();
+  choice = validateInt(1, 2);
 
 }
