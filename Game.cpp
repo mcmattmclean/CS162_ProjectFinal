@@ -75,8 +75,7 @@ bool Game::startGame(){
 
   int choice = -1;
   bool play;
-  int numPadding = (windowHeight - getNumLines("graphics/main-menu.txt")) \
-  / 2 - 2;
+  int numPadding = getPadding(2, windowHeight, "graphics/main-menu.txt");
 
   do{
     printGraphic("graphics/main-menu.txt");
@@ -105,12 +104,23 @@ bool Game::startGame(){
 **  until the game is completed.
 ******************************************************************************/
 void Game::run(){
-
   refresh();
 
 }
 
 void Game::refresh(){
-  
+  currentRoom->printState();
+  currentRoom->update();
+  cin.ignore('\n');
+  cin.get();
+  currentRoom->printState();
+  currentRoom->update();
+  cin.ignore('\n');
+  cin.get();
+  currentRoom->printState();
+  currentRoom->update();
+  cin.ignore('\n');
+  cin.get();
+
 
 }

@@ -22,5 +22,6 @@ using std::getline;
 int validateInt(int, int);
 void printGraphic(string);
 int getNumLines(string);
+int getPadding(int, int, string);
 
 #endif

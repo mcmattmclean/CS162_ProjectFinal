@@ -67,3 +67,38 @@ void Room::setBlurb(string blurbIn){
 string Room::getBlurb(){
   return blurb;
 }
+
+void Room::printState(){
+  string currentGraphic = getGraphic();
+  printGraphic(currentGraphic);
+  int padding = getPadding(getMenuSize(), 40, currentGraphic);
+  for(int i = 0; i < padding; i++){
+    cout << endl;
+  }
+  printMenu();
+  for(int i = 0; i < padding; i++){
+    cout << endl;
+  }
+}
+
+void Room::addMenu(string toAdd){
+  menuList.push_back(toAdd);
+}
+
+int Room::getMenuSize(){
+  int totalHeadersFooters = 2;
+  return menuList.size() + totalHeadersFooters;
+}
+
+void Room::printMenu(){
+  cout << " MENU" << endl;
+  for(unsigned int i = 0; i < menuList.size(); i++){
+    cout << ' ' << i+1 << ") " << menuList[i] << endl;
+  }
+}
+
+void Room::clearMenu(){
+  while(menuList.size() > 0){
+    menuList.clear();
+  }
+}

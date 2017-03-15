@@ -12,4 +12,4 @@ AdminBuilding::AdminBuilding(){
 
 }
 
-void AdminBuilding::printState(){}
+void AdminBuilding::update(){}

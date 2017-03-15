@@ -12,4 +12,4 @@ ScienceBuilding::ScienceBuilding(){
 
 }
 
-void ScienceBuilding::printState(){}
+void ScienceBuilding::update(){}

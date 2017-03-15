@@ -14,7 +14,8 @@ class SecretRoom : public Room{
 private:
 public:
   SecretRoom();
-  void printState();
+  void update();
+
 
 };
 

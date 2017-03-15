@@ -12,4 +12,4 @@ SecretRoom::SecretRoom(){
 
 }
 
-void SecretRoom::printState(){}
+void SecretRoom::update(){}

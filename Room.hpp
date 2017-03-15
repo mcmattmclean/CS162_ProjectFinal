@@ -10,8 +10,10 @@
 #define ROOM_HPP
 
 #include <string>
+#include <vector>
 #include "util.hpp"
 using std::string;
+using std::vector;
 
 class Room{
 private:
@@ -22,16 +24,22 @@ private:
   string name = "";
   string graphic = "graphics/test-room.txt";
   string blurb = "";
+  vector<string> menuList {"Travel", "Check Inventory"};
 public:
   Room();
   virtual ~Room();
-  virtual void printState() = 0;
+  virtual void update() = 0;
+  void printState();
+  void printMenu();
   void setName(string);
   string getName();
   void setBlurb(string);
   string getBlurb();
   void setGraphic(string);
   string getGraphic();
+  void addMenu(string);
+  int getMenuSize();
+  void clearMenu();
   void setNorth(Room*);
   void setSouth(Room*);
   void setEast(Room*);

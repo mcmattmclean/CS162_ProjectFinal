@@ -14,7 +14,8 @@ class ScienceBuilding : public Room{
 private:
 public:
   ScienceBuilding();
-  void printState();
+  void update();
+
 
 };
 

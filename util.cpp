@@ -51,6 +51,20 @@ void printGraphic(string fileName){
   cout << endl;
 }
 
+/******************************************************************************
+* Function: getPadding()
+*
+* Description: Takes the number of lines of text to be printed in addition to the
+**  text image, the height of the terminal window, and the name of a file as a
+**  string, and calculates the amount of padding to properly fill the terminal.
+******************************************************************************/
+int getPadding(int lines, int heightWindow, string fileName){
+  int numPadding = (heightWindow - getNumLines(fileName)) \
+  / 2 - lines;
+
+  return numPadding;
+}
+
 /*****************************************************************************
 * Function: validateInt.cpp
 *

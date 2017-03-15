@@ -14,7 +14,7 @@ class Library : public Room{
 private:
 public:
   Library();
-  void printState();
+  void update();
 
 };
 

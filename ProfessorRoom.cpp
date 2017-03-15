@@ -12,4 +12,4 @@ ProfessorRoom::ProfessorRoom(){
 
 }
 
-void ProfessorRoom::printState(){}
+void ProfessorRoom::update(){}

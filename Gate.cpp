@@ -12,4 +12,4 @@ Gate::Gate(){
 
 }
 
-void Gate::printState(){}
+void Gate::update(){}

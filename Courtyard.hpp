@@ -17,7 +17,7 @@ private:
   bool firstVisit = true;
 public:
   Courtyard();
-  void printState();
+  void update();
 
 };
 
