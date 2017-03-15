@@ -1,22 +1,21 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include "util.hpp"
-
-using std::ifstream;
-using std::cout;
-using std::cin;
-using std::endl;
-using std::string;
+#include "Game.hpp"
 
 int main(){
 
-  string test1 = "graphics/setup.txt";
-  string test2 = "graphics/basic-room.txt";
+  Game game = Game();
+  bool play = game.startGame();
 
-  printGraphic(test1);
-  cin.get();
-  printGraphic(test2);
+  if(play){
+    game.run();
+  }
+
+
+  // string test1 = "graphics/setup.txt";
+  // string test2 = "graphics/basic-room.txt";
+  //
+  // printGraphic(test1);
+  // cin.get();
+  // printGraphic(test2);
 
   return 0;
 }

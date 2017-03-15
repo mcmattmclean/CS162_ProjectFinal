@@ -1,3 +1,10 @@
+/******************************************************************************
+* Name: util.hpp
+* Date: 14 Mar 2017
+* Author: Matthew McLean
+* Description: Utility function prototypes
+******************************************************************************/
+
 #ifndef UTIL_HPP
 #define UITL_HPP
 
