@@ -11,3 +11,5 @@ SecretRoom::SecretRoom(){
   setName("A secret room behind a bookshelf");
 
 }
+
+void SecretRoom::printState(){}

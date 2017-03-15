@@ -14,6 +14,7 @@ class Gate : public Room{
 private:
 public:
   Gate();
+  void printState();
 
 };
 

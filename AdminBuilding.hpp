@@ -14,6 +14,7 @@ class AdminBuilding : public Room{
 private:
 public:
   AdminBuilding();
+  void printState();
 
 };
 

@@ -10,6 +10,7 @@
 #define ROOM_HPP
 
 #include <string>
+#include "util.hpp"
 using std::string;
 
 class Room{
@@ -19,10 +20,12 @@ private:
   Room* east = nullptr;
   Room* west = nullptr;
   string name = "";
-  string graphic = "test-room.txt";
+  string graphic = "graphics/test-room.txt";
   string blurb = "";
 public:
   Room();
+  virtual ~Room();
+  virtual void printState() = 0;
   void setName(string);
   string getName();
   void setBlurb(string);

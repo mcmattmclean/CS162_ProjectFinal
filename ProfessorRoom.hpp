@@ -14,6 +14,7 @@ class ProfessorRoom : public Room{
 private:
 public:
   ProfessorRoom();
+  void printState();
 
 };
 

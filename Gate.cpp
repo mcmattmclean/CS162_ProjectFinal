@@ -11,3 +11,5 @@ Gate::Gate(){
   setName("A gate to another dimension");
 
 }
+
+void Gate::printState(){}

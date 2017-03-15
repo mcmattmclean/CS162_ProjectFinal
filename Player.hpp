@@ -19,6 +19,8 @@ class Player{
 private:
   vector<string> bag {};
   vector<string> allies {};
+  int sanity = 100;
+  int health = 100;
   int maxBagSize = 5;
   string name = "";
 public:

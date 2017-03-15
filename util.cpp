@@ -35,7 +35,7 @@ int getNumLines(string fileName){
 * Then opens the file matching the string passed to it and displayes the file.
 ******************************************************************************/
 void printGraphic(string fileName){
-  for(int i = 0; i < 800; i++){ //Print new lines
+  for(int i = 0; i < 200; i++){ //Print new lines
     cout << endl;
   }
 

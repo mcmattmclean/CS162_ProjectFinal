@@ -8,8 +8,9 @@
 #include "Room.hpp"
 
 Room::Room(){
-
 }
+
+Room::~Room(){}
 
 void Room::setNorth(Room* room){
   north = room;

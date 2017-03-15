@@ -11,3 +11,5 @@ ProfessorRoom::ProfessorRoom(){
   setName("Professor Harvey's Office");
 
 }
+
+void ProfessorRoom::printState(){}

@@ -11,3 +11,5 @@ ScienceBuilding::ScienceBuilding(){
   setName("The Miskatonic University Science Building");
 
 }
+
+void ScienceBuilding::printState(){}

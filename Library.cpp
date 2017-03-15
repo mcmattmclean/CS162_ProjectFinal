@@ -11,3 +11,5 @@ Library::Library(){
   setName("The Miskatonic University Library");
 
 }
+
+void Library::printState(){}

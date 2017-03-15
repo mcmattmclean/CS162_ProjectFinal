@@ -106,11 +106,11 @@ bool Game::startGame(){
 ******************************************************************************/
 void Game::run(){
 
-
+  refresh();
 
 }
 
 void Game::refresh(){
-  printGraphic(currentRoom->getGraphic());
   
+
 }

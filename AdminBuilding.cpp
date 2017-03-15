@@ -11,3 +11,5 @@ AdminBuilding::AdminBuilding(){
   setName("The Administration Building");
 
 }
+
+void AdminBuilding::printState(){}
