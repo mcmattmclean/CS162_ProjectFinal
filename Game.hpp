@@ -28,9 +28,18 @@ private:
   const int windowHeight = 40;
   Player* player = nullptr;
   Room* currentLocation = nullptr;
+  Room* courtyard = nullptr;
+  Room* gate = nullptr;
+  Room* library = nullptr;
+  Room* sroom = nullptr;
+  Room* science = nullptr;
+  Room* admin = nullptr;
+  Room* profRoom = nullptr;
+
 
 public:
   Game();
+  ~Game();
   bool startGame();
   void run();
   void refresh();

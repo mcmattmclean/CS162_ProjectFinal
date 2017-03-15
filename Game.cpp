@@ -16,13 +16,38 @@
 ******************************************************************************/
 Game::Game(){
   player = new Player("Davey");
-  Room* courtyard = new Courtyard();
-  Room* gate = new Gate();
+
+  //Initialize all rooms
+  courtyard = new Courtyard();
+  gate = new Gate();
+  library = new Library();
+  sroom = new SecretRoom();
+  science = new ScienceBuilding();
+  admin = new AdminBuilding();
+  profRoom = new ProfessorRoom();
+
+  //Set map for all rooms
 
 }
 
 /******************************************************************************
-* Function: startGame() constructor
+* Function: Game() destructor
+*
+* Description: Deletes all dynamically allocated objects.
+******************************************************************************/
+Game::~Game(){
+  delete player;
+  delete courtyard;
+  delete gate;
+  delete library;
+  delete sroom;
+  delete science;
+  delete admin;
+  delete profRoom;
+}
+
+/******************************************************************************
+* Function: startGame()
 *
 * Description: First prints the setup screen for the game, allowing the user to
 **  resize their screen as appropriate. Then starts the main menu for the game,
