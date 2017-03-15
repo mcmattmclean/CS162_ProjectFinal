@@ -27,7 +27,7 @@ class Game{
 private:
   const int windowHeight = 40;
   Player* player = nullptr;
-  Room* currentLocation = nullptr;
+  Room* currentRoom = nullptr;
   Room* courtyard = nullptr;
   Room* gate = nullptr;
   Room* library = nullptr;
@@ -35,7 +35,6 @@ private:
   Room* science = nullptr;
   Room* admin = nullptr;
   Room* profRoom = nullptr;
-
 
 public:
   Game();

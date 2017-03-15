@@ -27,7 +27,21 @@ Game::Game(){
   profRoom = new ProfessorRoom();
 
   //Set map for all rooms
+  courtyard->setNorth(gate);
+  courtyard->setWest(admin);
+  courtyard->setEast(library);
+  courtyard->setSouth(science);
+  gate->setSouth(courtyard);
+  library->setWest(courtyard);
+  library->setEast(sroom);
+  sroom->setWest(library);
+  science->setNorth(courtyard);
+  admin->setEast(courtyard);
+  admin->setNorth(profRoom);
+  profRoom->setSouth(admin);
 
+  //Set start location
+  currentRoom = courtyard;
 }
 
 /******************************************************************************
@@ -97,5 +111,6 @@ void Game::run(){
 }
 
 void Game::refresh(){
-
+  printGraphic(currentRoom->getGraphic());
+  
 }
