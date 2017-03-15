@@ -18,6 +18,7 @@ using std::cin;
 using std::endl;
 using std::ifstream;
 
+int validateInt(int, int);
 void printGraphic(string);
 
 #endif

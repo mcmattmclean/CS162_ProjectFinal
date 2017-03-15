@@ -29,3 +29,23 @@ void printGraphic(string fileName){
   textImg.close();
   cout << endl;
 }
+
+/*****************************************************************************
+* Function: validateInt.cpp
+*
+* Description: Attempts to read an int. If invalid, it returns -1, else it
+**  returns the input integer.
+*****************************************************************************/
+int validateInt(int min, int max){
+  int userInt = -1;
+
+  std::cin >> userInt;  //Read user input
+
+  if(std::cin.fail() || userInt < min || userInt > max){
+    std::cin.clear();
+    std::cin.ignore(256, '\n');
+    userInt = -1;
+  }
+
+  return userInt;
+}

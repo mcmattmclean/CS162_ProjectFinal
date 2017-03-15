@@ -26,13 +26,30 @@ Game::Game(){
 **  prompting user to either start the game or quit.
 ******************************************************************************/
 bool Game::startGame(){
+  //Print set-up graphic so user can resize window
   printGraphic("graphics/setup.txt");
-  cin.get();
-  printGraphic("graphics/main-menu.txt");
-  cout << "1) Play Game" << endl << "2) Quit" << endl;
-  // int play = 0;
-  // cin >> play;
-  return false;
+  cout << " >> ";
+  cin.get();  //Wait for enter character
+
+
+  int choice = -1;
+  bool play;
+
+  do{
+    printGraphic("graphics/main-menu.txt");
+    cout << " 1) Play Game" << endl << " 2) Quit" << endl;
+    cout << " >>  ";
+    choice = validateInt(1, 2);
+  }while(choice == -1);
+
+  if(choice == 1){
+    play = true;
+  }
+  else{
+    play = false;
+  }
+
+  return play;
 }
 
 /******************************************************************************
