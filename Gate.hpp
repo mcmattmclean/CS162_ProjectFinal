@@ -1,19 +1,19 @@
 /******************************************************************************
-* Name: Courtyard.hpp
+* Name: Gate.hpp
 * Date: 14 Mar 2017
 * Author: Matthew McLean
-* Description: Courtyard class header file, contains protected member
+* Description: Gate class header file, contains protected member
 **  variable declarations and member function prototypes.
 ******************************************************************************/
-#ifndef COURTYARD_HPP
-#define COURTYARD_HPP
+#ifndef GATE_HPP
+#define GATE_HPP
 
 #include "Room.hpp"
 
-class Courtyard : public Room{
+class Gate : public Room{
 private:
 public:
-  Courtyard();
+  Gate();
 
 };
 

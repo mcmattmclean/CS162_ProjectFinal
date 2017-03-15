@@ -19,10 +19,16 @@ private:
   Room* east = nullptr;
   Room* west = nullptr;
   string name = "";
+  string graphic = "test-room.txt";
+  string blurb = "";
 public:
   Room();
   void setName(string);
   string getName();
+  void setBlurb(string);
+  string getBlurb();
+  void setGraphic(string);
+  string getGraphic();
   void setNorth(Room*);
   void setSouth(Room*);
   void setEast(Room*);

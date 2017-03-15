@@ -15,11 +15,53 @@
 **  objects.
 ******************************************************************************/
 Game::Game(){
+  player = new Player("Davey");
 
+  //Initialize all rooms
+  courtyard = new Courtyard();
+  gate = new Gate();
+  library = new Library();
+  sroom = new SecretRoom();
+  science = new ScienceBuilding();
+  admin = new AdminBuilding();
+  profRoom = new ProfessorRoom();
+
+  //Set map for all rooms
+  courtyard->setNorth(gate);
+  courtyard->setWest(admin);
+  courtyard->setEast(library);
+  courtyard->setSouth(science);
+  gate->setSouth(courtyard);
+  library->setWest(courtyard);
+  library->setEast(sroom);
+  sroom->setWest(library);
+  science->setNorth(courtyard);
+  admin->setEast(courtyard);
+  admin->setNorth(profRoom);
+  profRoom->setSouth(admin);
+
+  //Set start location
+  currentRoom = courtyard;
 }
 
 /******************************************************************************
-* Function: startGame() constructor
+* Function: Game() destructor
+*
+* Description: Deletes all dynamically allocated objects.
+******************************************************************************/
+Game::~Game(){
+  delete player;
+  delete courtyard;
+  delete gate;
+  delete library;
+  delete sroom;
+  delete science;
+  delete admin;
+  delete profRoom;
+}
+
+/******************************************************************************
+* Function: startGame()
 *
 * Description: First prints the setup screen for the game, allowing the user to
 **  resize their screen as appropriate. Then starts the main menu for the game,
@@ -69,5 +111,6 @@ void Game::run(){
 }
 
 void Game::refresh(){
+  printGraphic(currentRoom->getGraphic());
   
 }

@@ -1,19 +1,19 @@
 /******************************************************************************
-* Name: Courtyard.hpp
+* Name: ScienceBuilding.hpp
 * Date: 14 Mar 2017
 * Author: Matthew McLean
-* Description: Courtyard class header file, contains protected member
+* Description: ScienceBuilding class header file, contains protected member
 **  variable declarations and member function prototypes.
 ******************************************************************************/
-#ifndef COURTYARD_HPP
-#define COURTYARD_HPP
+#ifndef SCIENCEBUILDING_HPP
+#define SCIENCEBUILDING_HPP
 
 #include "Room.hpp"
 
-class Courtyard : public Room{
+class ScienceBuilding : public Room{
 private:
 public:
-  Courtyard();
+  ScienceBuilding();
 
 };
 
