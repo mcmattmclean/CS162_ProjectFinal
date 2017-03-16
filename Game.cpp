@@ -124,18 +124,22 @@ void Game::travel(Room* toTravel){
 **  until the game is completed.
 ******************************************************************************/
 void Game::run(){
-  currentRoom->printState();  //Four lines for intro sequence
-  cout << "Health: " << player.getHealth() << " Sanity: " << player.getSanity() << '\n' << endl;
-  currentRoom->printMenu();
-  cout << " >>  ";
+  currentRoom->printState();  //Begin intro sequence
+  cout << " Press enter to get moving.  ";
   cin.ignore();
   cin.get();
+  refresh();
+  currentRoom->printState();
+  cin.get();  //End intro sequence
+
+
   while(!gameOver){
-    refresh();
+    refresh();  //Updates room info
     int menuChoice;
+    //Loop printing the current graphic and waiting for valid input
     do{
       currentRoom->printState();
-      cout << "Health: " << player.getHealth() << " Sanity: " << player.getSanity() << '\n' << endl;
+      cout << " Health: " << player.getHealth() << " Sanity: " << player.getSanity() << '\n' << endl;
       currentRoom->printMenu();
       cout << " >>  ";
       menuChoice = validateInt(1, currentRoom->getMenuSize());
@@ -149,7 +153,7 @@ void Game::run(){
         cout << " >>  ";
         travelChoice = validateInt(1, 5);
       }while(travelChoice == -1);
-      if(travelChoice == 1){ //North
+      if(travelChoice == 1){
         travel(currentRoom->getNorth());
       }
       else if(travelChoice == 2){
@@ -161,18 +165,21 @@ void Game::run(){
       else if(travelChoice == 4){
         travel(currentRoom->getWest());
       }
+      else{
+        player.setSanity(player.getSanity()+1); //Prevent sanity loss when not moving
+      }
     }
 
     if(menuChoice == 2){  //Check inventory option
       currentRoom->printState();
       vector<string>* userBag = player.getBag();
       if(userBag->size() == 0){
-        cout << "Your bag is empty!" << endl;
+        cout << " Your bag is empty!" << endl;
       }
       else{
-        cout << "Your bag contains: " << endl;
+        cout << " Your bag contains: " << endl;
         for(unsigned int i = 0; i < userBag->size(); i++){
-          cout << (*userBag)[i] << endl;
+          cout << ' ' << (*userBag)[i] << endl;
         }
       }
       cin.ignore();
