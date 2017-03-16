@@ -12,6 +12,7 @@
 
 class ProfessorRoom : public Room{
 private:
+  bool firstVisit = true;
 public:
   ProfessorRoom();
   void update();

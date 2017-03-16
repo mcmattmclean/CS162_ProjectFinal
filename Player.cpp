@@ -22,12 +22,11 @@ vector<string>* Player::getBag(){
   return &bag;
 }
 
-
 /******************************************************************************
 * Function: addItem
 *
 * Description: Adds item if there is room in the bag. Updates crirical item flags
-**  if appropriate.
+**  if appropriate. Returns true if item was added, false if not.
 ******************************************************************************/
 bool Player::addItem(string toAdd){
   bool itemAdded;
@@ -49,6 +48,22 @@ bool Player::addItem(string toAdd){
     itemAdded = false;
   }
   return itemAdded;
+}
+
+/******************************************************************************
+* Function: removeItem
+*
+* Description: Removes the item matching the passed string.
+******************************************************************************/
+bool Player::removeItem(string toRemove){
+  bool removed = false;
+  for(unsigned int i = 0; i < bag.size(); i++){
+    if(bag[i] == toRemove){ //Iterate through bag until item matches toRemove
+      bag.erase(bag.begin()+i);
+      removed = true;
+    }
+  }
+  return removed;
 }
 
 void Player::setTome(bool hasTome){

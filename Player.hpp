@@ -9,8 +9,8 @@ using std::vector;
 
 class Player{
 private:
-  vector<string> bag {"Science Textbook", "Lucky Penny"};
-  int sanity = 10;
+  vector<string> bag {"Notebook", "Lucky Penny"};
+  int sanity = 100;
   int health = 100;
   unsigned int maxBagSize = 5;
   bool tome = false;
@@ -26,7 +26,7 @@ public:
 
   vector<string>* getBag();
   bool addItem(string);
-  void removeItem(string);
+  bool removeItem(string);
 
   void setTome(bool);
   void setMonster(bool);

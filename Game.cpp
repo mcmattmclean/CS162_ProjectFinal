@@ -125,13 +125,13 @@ void Game::travel(Room* toTravel){
 ******************************************************************************/
 void Game::run(){
   currentRoom->printState();  //Begin intro sequence
-  cout << " Press enter to get moving.  ";
+  cout << " Press enter to get moving. ";
   cin.ignore();
   cin.get();
   refresh();
   currentRoom->printState();
-  cin.get();  //End intro sequence
-
+  cout << " Press enter to continue. ";
+  cin.get(); //End intro sequence
 
   while(!gameOver){
     refresh();  //Updates room info
