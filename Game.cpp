@@ -91,22 +91,29 @@ bool Game::startGame(){
 }
 
 void Game::travel(Room* toTravel){
+  string tmp;
   if(toTravel == nullptr){
+    tmp = currentRoom->getBlurb();
+    currentRoom->setBlurb(" There's nowhere to go that way.");
     currentRoom->printState();
-    cout << " There's nowhere to go that way." << endl;
+    currentRoom->setBlurb(tmp);
     cin.ignore();
     cin.get();
   }
   else{
     if(toTravel->getVisible() == false){
+      tmp = currentRoom->getBlurb();
+      currentRoom->setBlurb(" Doesn't look like you can go this way... Unless...");
       currentRoom->printState();
-      cout << "Doesn't look like you can go this way... Unless..." << endl;
+      currentRoom->setBlurb(tmp);
       cin.ignore();
       cin.get();
     }
     else if(toTravel->getAccessible() == false){
+      tmp = currentRoom->getBlurb();
+      currentRoom->setBlurb(" You can't go here yet!");
       currentRoom->printState();
-      cout << "You can't go here yet!" << endl;
+      currentRoom->setBlurb(tmp);
       cin.ignore();
       cin.get();
     }
@@ -215,4 +222,8 @@ void Game::run(){
 
 void Game::refresh(){
   currentRoom->update();
+  if(player.hasUnlockedRoom()){
+    sroom->setAccessible(true);
+    sroom->setVisible(true);
+  }
 }

@@ -82,6 +82,10 @@ void Player::setProfessor(bool hasProfessor){
   professor = hasProfessor;
 }
 
+void Player::setUnlockedRoom(bool roomLockState){
+  unlockedRoom = roomLockState;
+}
+
 bool Player::hasTome(){
   return tome;
 }
@@ -96,4 +100,8 @@ bool Player::hasPapers(){
 
 bool Player::hasProfessor(){
   return professor;
+}
+
+bool Player::hasUnlockedRoom(){
+  return unlockedRoom;
 }

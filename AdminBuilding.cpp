@@ -16,21 +16,18 @@ void AdminBuilding::update(){}
 
 void AdminBuilding::explore(Player* player){
   string tmp = getBlurb(); //Clear the blurb
-  setBlurb("");
 
   printState();
   if(player->hasProfessor() && player->hasMonster()){
     setBlurb(" Professor: We best get moving, that gate won't close itself.");
-    printState();
   }
   else if(player->hasProfessor()){
     setBlurb(" We're not going to find what we need messing about here longer!");
-    printState();
   }
   else{
     setBlurb(" Professor Harvey's Office lies straight ahead.");
-    printState();
   }
+  printState();
   cout << " Press enter to continue. ";
   cin.ignore();
   cin.get();

@@ -12,6 +12,7 @@
 
 class Library : public Room{
 private:
+  bool firstVisit = true;
 public:
   Library();
   void update();

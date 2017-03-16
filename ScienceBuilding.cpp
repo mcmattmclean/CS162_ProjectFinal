@@ -24,14 +24,16 @@ void ScienceBuilding::update(){}
 ******************************************************************************/
 void ScienceBuilding::explore(Player* player){
   string tmp = getBlurb();
+  bool hackyCinStuff = true;
 
   if(player->hasProfessor() && player->hasMonster()){ // Turn monster in for the research notes
+    hackyCinStuff = false;
     setBlurb(" Professor: These scientists can help me dissect this fearsome beast! Let's see what we can learn...");
     setGraphic("graphics/dissection.txt");
     player->setMonster(false);
     player->setPapers(true);
     player->removeItem("A Monstrous Corpse");
-    player->addItem("Research notes");
+    player->addItem("Research Notes");
     printState();
 
     cout << " Press enter to continue. ";
@@ -56,7 +58,9 @@ void ScienceBuilding::explore(Player* player){
   }
   cout << " Press enter to continue. ";
   cin.clear();
-  cin.ignore();
+  if(hackyCinStuff){
+    cin.ignore();
+  }
   cin.get();
   setBlurb(tmp);
 }
