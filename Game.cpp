@@ -141,7 +141,6 @@ void Game::run(){
   cin.get(); //End intro sequence
 
   while(!gameOver){
-    refresh();  //Updates room info
     int menuChoice;
     //Loop printing the current graphic and waiting for valid input
     do{
@@ -203,6 +202,8 @@ void Game::run(){
     if(player.getSanity() <= 0 || player.getHealth() <= 0){
       gameOver = true;
     }
+
+    refresh();  //Updates room info
   }
 
   if(player.getSanity() <= 0 || player.getHealth() <= 0){
@@ -214,10 +215,19 @@ void Game::run(){
     for(int i = 0; i < padding; i++){
       cout << endl;
     }
-    cout << "Press enter to return to main menu.";
-    cin.ignore();
-    cin.get();
   }
+  else{
+    int padding = getPadding(0, windowHeight, "graphics/win.txt");
+    for(int i = 0; i < padding; i++){
+      cout << endl;
+    }
+    printGraphic("graphics/win.txt");
+    for(int i = 0; i < padding; i++){
+      cout << endl;
+    }
+  }
+  cout << "Press enter to return to main menu.";
+  cin.get();
 }
 
 void Game::refresh(){
@@ -225,5 +235,8 @@ void Game::refresh(){
   if(player.hasUnlockedRoom()){
     sroom->setAccessible(true);
     sroom->setVisible(true);
+  }
+  if(player.hasClosedGate()){
+    gameOver = true;
   }
 }

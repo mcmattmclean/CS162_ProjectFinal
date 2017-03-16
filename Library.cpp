@@ -110,6 +110,9 @@ void Library::explore(Player* player){
     else if(!player->hasTome() && player->hasUnlockedRoom()){
       setBlurb(" Professor: Lets get in there and grab that tome!");
     }
+    else if(player->hasProfessor() && player->hasMonster()){
+      setBlurb(" Professor: This isn't the science building!");
+    }
     printState();
     cout << " Press enter to continue. ";
     cin.clear();

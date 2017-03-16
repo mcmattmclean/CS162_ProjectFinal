@@ -16,7 +16,7 @@ Courtyard::Courtyard(){
 void Courtyard::update(){
   if(gatePresentClosed){
     setGraphic("graphics/courtyard-gateclosed.txt");
-    setBlurb(" The gate is shut, and Arkham is safe. For now...");
+    setBlurb(" The gate is shut, and the university is safe. For now...");
   }
   else if(gatePresentOpen){
     setBlurb(" The massive gateway pulses, filling you with dread.");

@@ -18,6 +18,7 @@ private:
   bool papers = false;
   bool professor = false;
   bool unlockedRoom = false;
+  bool closedGate = false;
 public:
   Player();
   void setHealth(int);
@@ -34,11 +35,13 @@ public:
   void setPapers(bool);
   void setProfessor(bool);
   void setUnlockedRoom(bool);
+  void setClosedGate(bool);
   bool hasTome();
   bool hasMonster();
   bool hasPapers();
   bool hasProfessor();
   bool hasUnlockedRoom();
+  bool hasClosedGate();
 };
 
 #endif

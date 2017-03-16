@@ -86,6 +86,10 @@ void Player::setUnlockedRoom(bool roomLockState){
   unlockedRoom = roomLockState;
 }
 
+void Player::setClosedGate(bool gateState){
+  closedGate = gateState;
+}
+
 bool Player::hasTome(){
   return tome;
 }
@@ -104,4 +108,8 @@ bool Player::hasProfessor(){
 
 bool Player::hasUnlockedRoom(){
   return unlockedRoom;
+}
+
+bool Player::hasClosedGate(){
+  return closedGate;
 }
