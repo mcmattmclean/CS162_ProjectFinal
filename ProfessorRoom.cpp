@@ -70,21 +70,25 @@ void ProfessorRoom::explore(Player* player){
       player->setProfessor(true);
       setBlurb(" The storage closet door suddenly swings open, and the Professor sheepishly walks out.\n\n Professor: Goodness what a mess. I suppose that's to be expected when the space and\n time continuum insits on allowing the old ones to return. Ah well, let's get\n to closing that gate!");
       setGraphic("graphics/office-defeated.txt");
+      printState();
+      cout << " Press enter to continue. ";
+      cin.get();
+      setBlurb(" The office is a complete mess.");
     }
   }
   else{
+    string tmp = getBlurb();
     if((player->hasTome() && player->hasProfessor()) || (player->hasPapers() && player->hasProfessor())){
       setBlurb(" Professor: There isn't anything left here, stop snooping around my things and move!");
-      printState();
     }
     else if(player->hasProfessor() && player->hasMonster()){
       setBlurb(" Professor: If we can learn more about this creature, perhaps we can begin to\n understand where it came from!");
-      printState();
     }
     else{
       setBlurb(" Professor: We can't seal the gate without the ancient rites! Quick, to the library!");
-      printState();
     }
+    printState();
+    setBlurb(tmp);
     cout << " Press enter to continue. ";
     cin.clear();
     cin.ignore();
