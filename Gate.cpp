@@ -9,6 +9,7 @@
 
 Gate::Gate(){
   setName("A gate to another dimension");
+  setAccessible(false);
 
 }
 

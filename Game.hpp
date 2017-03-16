@@ -12,7 +12,6 @@
 #include <fstream>
 #include <string>
 #include "util.hpp"
-#include "Player.hpp"
 #include "Room.hpp"
 #include "Courtyard.hpp"
 #include "Gate.hpp"
@@ -25,9 +24,13 @@
 
 class Game{
 private:
+  vector<string> bag {"Science Textbook", "Lucky Penny"};
+  vector<string> allies {};
+  int sanity = 100;
+  int health = 100;
+  int maxBagSize = 5;
   const int windowHeight = 40;
   bool gameOver = false;
-  Player* player = nullptr;
   Room* currentRoom = nullptr;
   Room* courtyard = nullptr;
   Room* gate = nullptr;
@@ -43,7 +46,7 @@ public:
   bool startGame();
   void run();
   void refresh();
-
+  void travel(Room*);
 };
 
 #endif

@@ -9,7 +9,8 @@
 
 SecretRoom::SecretRoom(){
   setName("A secret room behind a bookshelf");
-
+  setAccessible(false);
+  setVisible(false);
 }
 
 void SecretRoom::update(){}

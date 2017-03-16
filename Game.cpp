@@ -11,11 +11,9 @@
 /******************************************************************************
 * Function: Game() constructor
 *
-* Description: Initializes the Game, dynamically allocating the map and player
-**  objects.
+* Description: Initializes the Game, dynamically allocating the map.
 ******************************************************************************/
 Game::Game(){
-  player = new Player();
 
   //Initialize all rooms
   courtyard = new Courtyard();
@@ -50,7 +48,6 @@ Game::Game(){
 * Description: Deletes all dynamically allocated objects.
 ******************************************************************************/
 Game::~Game(){
-  delete player;
   delete courtyard;
   delete gate;
   delete library;
@@ -97,6 +94,33 @@ bool Game::startGame(){
   return play;
 }
 
+void Game::travel(Room* toTravel){
+  if(toTravel == nullptr){
+    currentRoom->printState();
+    cout << " There's nowhere to go that way." << endl;
+    cin.ignore();
+    cin.get();
+  }
+  else{
+    if(toTravel->getVisible() == false){
+      currentRoom->printState();
+      cout << "Doesn't look like you can go this way... Unless..." << endl;
+      cin.ignore();
+      cin.get();
+    }
+    else if(toTravel->getAccessible() == false){
+      currentRoom->printState();
+      cout << "You can't go here yet!" << endl;
+      cin.ignore();
+      cin.get();
+    }
+    else{
+      currentRoom = toTravel;
+    }
+
+  }
+}
+
 /******************************************************************************
 * Function: run()
 *
@@ -104,27 +128,78 @@ bool Game::startGame(){
 **  until the game is completed.
 ******************************************************************************/
 void Game::run(){
-  // while(!gameOver){
-  //   currentRoom->printState();
-  //   currentRoom->update();
-  // }
-  refresh();
+  currentRoom->printState();  //Four lines for intro sequence
+  cout << "Health: " << health << " Sanity: " << sanity << '\n' << endl;
+  currentRoom->printMenu();
+  cin.ignore();
+  cin.get();
+  while(!gameOver){
+    currentRoom->update();
+    sanity--;
+    int menuChoice;
+    do{
+      currentRoom->printState();
+      cout << "Health: " << health << " Sanity: " << sanity << '\n' << endl;
+      currentRoom->printMenu();
+      menuChoice = validateInt(1, currentRoom->getMenuSize());
+    }while(menuChoice == -1);
+
+    if(menuChoice == 1){  //Travel option
+      int travelChoice = -1;
+      do{
+        currentRoom->printState();
+        currentRoom->travelMenu();
+        travelChoice = validateInt(1, 5);
+      }while(travelChoice == -1);
+      if(travelChoice == 1){ //North
+        travel(currentRoom->getNorth());
+      }
+      else if(travelChoice == 2){
+        travel(currentRoom->getEast());
+      }
+      else if(travelChoice == 3){
+        travel(currentRoom->getSouth());
+      }
+      else if(travelChoice == 4){
+        travel(currentRoom->getWest());
+      }
+    }
+
+    if(menuChoice == 2){  //Check inventory option
+      currentRoom->printState();
+      if(bag.size() == 0){
+        cout << "Your bag is empty!" << endl;
+      }
+      else{
+        cout << "Your bag contains: " << endl;
+        for(unsigned int i = 0; i < bag.size(); i++){
+          cout << bag[i] << endl;
+        }
+      }
+      cin.ignore();
+      cin.get();
+    }
+
+    if(menuChoice == 4){
+      // currentRoom->explore();
+    }
+  }
 }
 
 void Game::refresh(){
-  currentRoom->printState();
-  int choice = validateInt(1, 2);
-
-  currentRoom->update();
-  currentRoom->printState();
-  choice = validateInt(1, 2);
-
-  currentRoom->update();
-  currentRoom->printState();
-  choice = validateInt(1, 2);
-
-  currentRoom->update();
-  currentRoom->printState();
-  choice = validateInt(1, 2);
+  // currentRoom->printState();
+  // int choice = validateInt(1, 2);
+  //
+  // currentRoom->update();
+  // currentRoom->printState();
+  // choice = validateInt(1, 2);
+  //
+  // currentRoom->update();
+  // currentRoom->printState();
+  // choice = validateInt(1, 2);
+  //
+  // currentRoom->update();
+  // currentRoom->printState();
+  // choice = validateInt(1, 2);
 
 }

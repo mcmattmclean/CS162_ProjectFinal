@@ -8,7 +8,7 @@
 #include "Library.hpp"
 
 Library::Library(){
-  setName("The Miskatonic University Library");
+  setName("The Library");
 
 }
 

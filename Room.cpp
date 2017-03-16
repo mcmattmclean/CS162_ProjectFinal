@@ -68,6 +68,22 @@ string Room::getBlurb(){
   return blurb;
 }
 
+void Room::setAccessible(bool status){
+  isAccessible = status;
+}
+
+bool Room::getAccessible(){
+  return isAccessible;
+}
+
+void Room::setVisible(bool status){
+  visible = status;
+}
+
+bool Room::getVisible(){
+  return visible;
+}
+
 void Room::printState(){
   string currentGraphic = getGraphic();
   printGraphic(currentGraphic);
@@ -79,7 +95,43 @@ void Room::printState(){
   for(int i = 0; i < padding; i++){
     cout << endl;
   }
-  printMenu();
+}
+
+vector<string>* Room::getMenu(){
+  return &menuList;
+}
+
+void Room::travelMenu(){
+  cout << " LOCATIONS" << endl;
+  cout << " 1) North: ";
+  if(getNorth() != nullptr && getNorth()->getVisible() == true){
+    cout << getNorth()->getName() << endl;
+  }
+  else{
+    cout << "Nothing" << endl;
+  }
+  cout << " 2) East: ";
+  if(getEast() != nullptr && getEast()->getVisible() == true){
+    cout << getEast()->getName() << endl;
+  }
+  else{
+    cout << "Nothing" << endl;
+  }
+  cout << " 3) South: ";
+  if(getSouth() != nullptr && getSouth()->getVisible() == true){
+    cout << getSouth()->getName() << endl;
+  }
+  else{
+    cout << "Nothing" << endl;
+  }
+  cout << " 4) West: ";
+  if(getWest() != nullptr && getWest()->getVisible() == true){
+    cout << getWest()->getName() << endl;
+  }
+  else{
+    cout << "Nothing" << endl;
+  }
+  cout << " 5) Return to menu." << endl;
 }
 
 void Room::addMenu(string toAdd){
@@ -87,8 +139,7 @@ void Room::addMenu(string toAdd){
 }
 
 int Room::getMenuSize(){
-  int totalHeadersFooters = 2;
-  return menuList.size() + totalHeadersFooters;
+  return menuList.size();
 }
 
 void Room::printMenu(){

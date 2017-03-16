@@ -8,7 +8,7 @@
 #include "ScienceBuilding.hpp"
 
 ScienceBuilding::ScienceBuilding(){
-  setName("The Miskatonic University Science Building");
+  setName("The Science Building");
 
 }
 
