@@ -131,6 +131,7 @@ void Game::run(){
   currentRoom->printState();  //Four lines for intro sequence
   cout << "Health: " << health << " Sanity: " << sanity << '\n' << endl;
   currentRoom->printMenu();
+  cout << " >>  ";
   cin.ignore();
   cin.get();
   while(!gameOver){
@@ -141,6 +142,7 @@ void Game::run(){
       currentRoom->printState();
       cout << "Health: " << health << " Sanity: " << sanity << '\n' << endl;
       currentRoom->printMenu();
+      cout << " >>  ";
       menuChoice = validateInt(1, currentRoom->getMenuSize());
     }while(menuChoice == -1);
 
@@ -149,6 +151,7 @@ void Game::run(){
       do{
         currentRoom->printState();
         currentRoom->travelMenu();
+        cout << " >>  ";
         travelChoice = validateInt(1, 5);
       }while(travelChoice == -1);
       if(travelChoice == 1){ //North
