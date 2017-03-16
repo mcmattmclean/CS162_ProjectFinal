@@ -57,6 +57,7 @@ Game::~Game(){
   delete profRoom;
 }
 
+
 /******************************************************************************
 * Function: startGame()
 *
@@ -65,11 +66,6 @@ Game::~Game(){
 **  prompting user to either start the game or quit.
 ******************************************************************************/
 bool Game::startGame(){
-  //Print set-up graphic so user can resize window
-  printGraphic("graphics/setup.txt");
-  cout << " >> ";
-  cin.get();  //Wait for enter character
-
   int choice = -1;
   bool play;
   int numPadding = getPadding(2, windowHeight, "graphics/main-menu.txt");
@@ -129,18 +125,17 @@ void Game::travel(Room* toTravel){
 ******************************************************************************/
 void Game::run(){
   currentRoom->printState();  //Four lines for intro sequence
-  cout << "Health: " << health << " Sanity: " << sanity << '\n' << endl;
+  cout << "Health: " << player.getHealth() << " Sanity: " << player.getSanity() << '\n' << endl;
   currentRoom->printMenu();
   cout << " >>  ";
   cin.ignore();
   cin.get();
   while(!gameOver){
-    currentRoom->update();
-    sanity--;
+    refresh();
     int menuChoice;
     do{
       currentRoom->printState();
-      cout << "Health: " << health << " Sanity: " << sanity << '\n' << endl;
+      cout << "Health: " << player.getHealth() << " Sanity: " << player.getSanity() << '\n' << endl;
       currentRoom->printMenu();
       cout << " >>  ";
       menuChoice = validateInt(1, currentRoom->getMenuSize());
@@ -170,39 +165,45 @@ void Game::run(){
 
     if(menuChoice == 2){  //Check inventory option
       currentRoom->printState();
-      if(bag.size() == 0){
+      vector<string>* userBag = player.getBag();
+      if(userBag->size() == 0){
         cout << "Your bag is empty!" << endl;
       }
       else{
         cout << "Your bag contains: " << endl;
-        for(unsigned int i = 0; i < bag.size(); i++){
-          cout << bag[i] << endl;
+        for(unsigned int i = 0; i < userBag->size(); i++){
+          cout << (*userBag)[i] << endl;
         }
       }
       cin.ignore();
       cin.get();
     }
 
-    if(menuChoice == 4){
-      // currentRoom->explore();
+    if(menuChoice == 3){
+      currentRoom->explore(&player);
     }
+
+    player.setSanity(player.getSanity()-1); //After every game choice, sanity decreases by 1
+    if(player.getSanity() <= 0 || player.getHealth() <= 0){
+      gameOver = true;
+    }
+  }
+
+  if(player.getSanity() <= 0 || player.getHealth() <= 0){
+    int padding = getPadding(0, windowHeight, "graphics/lose.txt");
+    for(int i = 0; i < padding; i++){
+      cout << endl;
+    }
+    printGraphic("graphics/lose.txt");
+    for(int i = 0; i < padding; i++){
+      cout << endl;
+    }
+    cout << "Press enter to return to main menu.";
+    cin.ignore();
+    cin.get();
   }
 }
 
 void Game::refresh(){
-  // currentRoom->printState();
-  // int choice = validateInt(1, 2);
-  //
-  // currentRoom->update();
-  // currentRoom->printState();
-  // choice = validateInt(1, 2);
-  //
-  // currentRoom->update();
-  // currentRoom->printState();
-  // choice = validateInt(1, 2);
-  //
-  // currentRoom->update();
-  // currentRoom->printState();
-  // choice = validateInt(1, 2);
-
+  currentRoom->update();
 }

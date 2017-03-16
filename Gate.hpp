@@ -15,6 +15,8 @@ private:
 public:
   Gate();
   void update();
+  void explore(Player*);
+
 
 };
 

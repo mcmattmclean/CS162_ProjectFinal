@@ -1,21 +1,22 @@
 #include "Game.hpp"
 
 int main(){
+  bool playAgain = true;
 
-  Game game = Game();
-  bool play = game.startGame();
+  calibrateScreen();
 
-  if(play){
-    game.run();
-  }
+  do{
+    Game game = Game(); //Initialize game
+    bool play = game.startGame(); //Display main menu of game
 
+    if(play){
+      game.run();
+    }
+    else{
+      playAgain = false;
+    }
 
-  // string test1 = "graphics/setup.txt";
-  // string test2 = "graphics/basic-room.txt";
-  //
-  // printGraphic(test1);
-  // cin.get();
-  // printGraphic(test2);
+  }while(playAgain == true);  //Game returns to main menu when ended
 
   return 0;
 }

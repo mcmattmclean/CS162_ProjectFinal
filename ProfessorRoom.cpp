@@ -13,3 +13,7 @@ ProfessorRoom::ProfessorRoom(){
 }
 
 void ProfessorRoom::update(){}
+
+void ProfessorRoom::explore(Player* player){
+
+}

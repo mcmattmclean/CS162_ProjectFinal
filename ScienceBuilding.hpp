@@ -15,6 +15,8 @@ private:
 public:
   ScienceBuilding();
   void update();
+  void explore(Player*);
+
 
 
 };

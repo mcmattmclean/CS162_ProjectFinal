@@ -13,3 +13,7 @@ ScienceBuilding::ScienceBuilding(){
 }
 
 void ScienceBuilding::update(){}
+
+void ScienceBuilding::explore(Player* player){
+
+}

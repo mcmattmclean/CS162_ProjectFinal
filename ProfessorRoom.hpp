@@ -15,6 +15,8 @@ private:
 public:
   ProfessorRoom();
   void update();
+  void explore(Player*);
+
 
 };
 

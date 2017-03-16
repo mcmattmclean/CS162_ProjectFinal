@@ -14,3 +14,7 @@ Gate::Gate(){
 }
 
 void Gate::update(){}
+
+void Gate::explore(Player* player){
+
+}

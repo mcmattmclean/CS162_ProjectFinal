@@ -15,6 +15,8 @@ private:
 public:
   Library();
   void update();
+  void explore(Player*);
+
 
 };
 

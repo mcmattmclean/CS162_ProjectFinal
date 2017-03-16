@@ -21,14 +21,11 @@
 #include "AdminBuilding.hpp"
 #include "ProfessorRoom.hpp"
 #include "Game.hpp"
+#include "Player.hpp"
 
 class Game{
 private:
-  vector<string> bag {"Science Textbook", "Lucky Penny"};
-  vector<string> allies {};
-  int sanity = 100;
-  int health = 100;
-  int maxBagSize = 5;
+  Player player = Player();
   const int windowHeight = 40;
   bool gameOver = false;
   Room* currentRoom = nullptr;

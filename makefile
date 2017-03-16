@@ -1,6 +1,6 @@
 CXX = g++
 CXXFLAGS = -std=c++0x -pedantic-errors -Wall
-OBJS = main.o util.o Game.o Room.o Courtyard.o Gate.o Library.o
+OBJS = main.o util.o Game.o Player.o Room.o Courtyard.o Gate.o Library.o
 OBJS += SecretRoom.o ScienceBuilding.o AdminBuilding.o ProfessorRoom.o
 EXECUTABLE = project_test
 
@@ -18,6 +18,9 @@ Game.o: Game.cpp Game.hpp
 
 Room.o: Room.cpp Room.hpp
 	${CXX} ${CXXFLAGS} -c Room.cpp
+
+Player.o: Player.cpp Player.hpp
+	${CXX} ${CXXFLAGS} -c Player.cpp
 
 Courtyard.o: Courtyard.cpp Courtyard.hpp
 	${CXX} ${CXXFLAGS} -c Courtyard.cpp

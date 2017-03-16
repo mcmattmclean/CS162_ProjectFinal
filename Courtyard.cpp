@@ -28,3 +28,7 @@ void Courtyard::update(){
     setBlurb("Before you take a single step, a terrible gate appears, emanating death. The buildings \nnear it sprout giant tentacles, and you feel your sanity slipping away as the seconds\npass.");
   }
 }
+
+void Courtyard::explore(Player* player){
+  
+}

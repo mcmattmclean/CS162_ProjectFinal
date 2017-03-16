@@ -7,6 +7,19 @@
 #include "util.hpp"
 
 /******************************************************************************
+* Function: calibrateScreen()
+*
+* Description: Calls printGraphic to print the calibration file, then waits for
+**  user to hit enter to indicate the window is properly sized.
+******************************************************************************/
+void calibrateScreen(){
+  //Print set-up graphic so user can resize window
+  printGraphic("graphics/setup.txt");
+  cout << " >> ";
+  cin.get();  //Wait for enter character
+}
+
+/******************************************************************************
 * Function: getNumLines()
 *
 * Description: Opens file matching passed string, determines how many lines,

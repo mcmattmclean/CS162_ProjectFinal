@@ -14,3 +14,7 @@ SecretRoom::SecretRoom(){
 }
 
 void SecretRoom::update(){}
+
+void SecretRoom::explore(Player* player){
+
+}

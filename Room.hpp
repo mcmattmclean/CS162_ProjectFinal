@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include "util.hpp"
+#include "Player.hpp"
 using std::string;
 using std::vector;
 
@@ -31,6 +32,7 @@ public:
   Room();
   virtual ~Room();
   virtual void update() = 0;
+  virtual void explore(Player*) = 0;
   void printState();
   void printMenu();
   void travelMenu();

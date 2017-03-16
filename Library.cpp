@@ -13,3 +13,7 @@ Library::Library(){
 }
 
 void Library::update(){}
+
+void Library::explore(Player* player){
+
+}

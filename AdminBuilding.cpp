@@ -13,3 +13,7 @@ AdminBuilding::AdminBuilding(){
 }
 
 void AdminBuilding::update(){}
+
+void AdminBuilding::explore(Player* player){
+
+}

@@ -19,6 +19,7 @@ using std::endl;
 using std::ifstream;
 using std::getline;
 
+void calibrateScreen();
 int validateInt(int, int);
 void printGraphic(string);
 int getNumLines(string);

@@ -15,6 +15,8 @@ private:
 public:
   SecretRoom();
   void update();
+  void explore(Player*);
+
 
 
 };

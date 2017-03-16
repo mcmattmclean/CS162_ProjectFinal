@@ -18,6 +18,7 @@ private:
 public:
   Courtyard();
   void update();
+  void explore(Player*);
 
 };
 
