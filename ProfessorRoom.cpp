@@ -18,15 +18,18 @@ void ProfessorRoom::update(){}
 /******************************************************************************
 * Function: explore()
 *
-* Description: Sets output strings depending on player actions.
+* Description: Sets output strings depending on player actions. For this room,
+**  also executes the fight with the terrible monster. The fight continues until
+**  the monster or the player is defeated. If defeated, the professor joins
+**  the player and the corpse is added to his or her inventory.
 ******************************************************************************/
 void ProfessorRoom::explore(Player* player){
-  if(firstVisit){
+  if(firstVisit){ //Only fight monster on first visit
     setGraphic("graphics/monster.txt");
     setBlurb(" A horrifying monster crawls out from behind the desk! ");
     int fightChoice = -1;
     do{
-      while(fightChoice == -1){
+      while(fightChoice == -1){ //Get valid fight choice
         printState();
         cout << " 1) Punch the monster" << endl;
         cout << " 2) Cower in fear" << endl;
@@ -36,6 +39,7 @@ void ProfessorRoom::explore(Player* player){
         fightChoice = validateInt(1, 4);
       }
 
+      // Control output for fight choices
       if(fightChoice == 1){
         setBlurb(" Your strikes confuse the monster more then anything, its terrible eyes\n stare at you in disappointment.");
       }
@@ -45,7 +49,7 @@ void ProfessorRoom::explore(Player* player){
       }
       else if(fightChoice == 3){
         setBlurb(" You maneuver around the monster, dodging its evil claws as it reaches\n for you. You grab the bookshelf and heave with all your might. It tumbles\n forward, crushing the horrible creature.");
-        player->addItem("A Monstrous Corpse");
+        player->addItem("A Monstrous Corpse"); //Player must choose thise option to proceed
       }
       else if(fightChoice == 4){
         setBlurb(" What a foolish thing to do. The monster lurches toward you, and crushes your\n throat between its slick claws");
@@ -54,15 +58,16 @@ void ProfessorRoom::explore(Player* player){
 
       printState();
       cout << " Health: " << player->getHealth() << " Sanity: " << player->getSanity() << '\n' << endl;
-      cout << " >>  ";
+      cout << " Press enter to continue. ";
       cin.clear();
       cin.ignore();
       cin.get();
       fightChoice = -1; //Reset input validation
-    }while((player->hasMonster() == false) && (player->getHealth() > 0));
+    }while((player->hasMonster() == false) && (player->getHealth() > 0)); //Continue until player or monster is defeated.
 
     if(player->getHealth() > 0){ //Check for death before progressing story
       firstVisit = false;
+      player->setProfessor(true);
       setBlurb(" The storage closet door suddenly swings open, and the Professor sheepishly walks out.\n\n Professor: Goodness what a mess. I suppose that's to be expected when the space and\n time continuum insits on allowing the old ones to return. Ah well, let's get\n to closing that gate!");
       setGraphic("graphics/office-defeated.txt");
     }
@@ -80,7 +85,7 @@ void ProfessorRoom::explore(Player* player){
       setBlurb(" Professor: We can't seal the gate without the ancient rites! Quick, to the library!");
       printState();
     }
-    cout << " >>  ";
+    cout << " Press enter to continue. ";
     cin.clear();
     cin.ignore();
     cin.get();

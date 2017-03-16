@@ -182,6 +182,8 @@ void Game::run(){
           cout << ' ' << (*userBag)[i] << endl;
         }
       }
+      cout << "\n Press enter to continue. ";
+      cin.clear();
       cin.ignore();
       cin.get();
     }

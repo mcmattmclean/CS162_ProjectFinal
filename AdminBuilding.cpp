@@ -28,9 +28,10 @@ void AdminBuilding::explore(Player* player){
     printState();
   }
   else{
-    setBlurb(" The hallway seems to go on forever. Professor Harvey's Office lies straight ahead.");
+    setBlurb(" Professor Harvey's Office lies straight ahead.");
     printState();
   }
+  cout << " Press enter to continue. ";
   cin.ignore();
   cin.get();
   setBlurb(tmp);

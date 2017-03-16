@@ -52,6 +52,8 @@ void Courtyard::explore(Player* player){
     setBlurb(" The gate hums with a mysterious and terrible energy.");
     printState();
   }
+  cout << " Press enter to continue. ";
+  cin.clear();
   cin.ignore();
   cin.get();
   setBlurb(tmp);
