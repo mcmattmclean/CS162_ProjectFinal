@@ -79,7 +79,7 @@ void Library::explore(Player* player){
         }while(thirdNum == -1);
 
         if (firstNum == 12 && secondNum == 30 && thirdNum == 18){ //Check if correct
-          setBlurb(" You hear a quiet hiss that grows lowder. Suddenly, the bookshelf swings open, revealing the secret room!");
+          setBlurb(" You hear a quiet hiss that grows lowder. Suddenly, the bookshelf swings open,\n revealing the secret room!");
           setGraphic("graphics/puzzle-solved.txt");
           player->setUnlockedRoom(true);
           printState();

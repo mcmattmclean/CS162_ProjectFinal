@@ -48,7 +48,7 @@ void ProfessorRoom::explore(Player* player){
         player->setHealth(player->getHealth() - 50);
       }
       else if(fightChoice == 3){
-        setBlurb(" You maneuver around the monster, dodging its evil claws as it reaches\n for you. You grab the bookshelf and heave with all your might. It tumbles\n forward, crushing the horrible creature.");
+        setBlurb(" You maneuver around the monster, dodging its evil claws as it reaches\n for you. You grab the bookshelf and heave with all your might. It tumbles\n forward, crushing the horrible creature.\n\n You've acquired: A Monstrous Corpse");
         player->addItem("A Monstrous Corpse"); //Player must choose thise option to proceed
       }
       else if(fightChoice == 4){
