@@ -12,6 +12,7 @@
 
 class SecretRoom : public Room{
 private:
+  bool firstVisit = true;
 public:
   SecretRoom();
   void update();
