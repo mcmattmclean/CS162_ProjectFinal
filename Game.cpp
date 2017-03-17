@@ -96,6 +96,7 @@ void Game::travel(Room* toTravel){
     tmp = currentRoom->getBlurb();
     currentRoom->setBlurb(" There's nowhere to go that way.");
     currentRoom->printState();
+    cout << " Press enter to continue. ";
     currentRoom->setBlurb(tmp);
     cin.ignore();
     cin.get();
@@ -105,6 +106,7 @@ void Game::travel(Room* toTravel){
       tmp = currentRoom->getBlurb();
       currentRoom->setBlurb(" Doesn't look like you can go this way... Unless...");
       currentRoom->printState();
+      cout << " Press enter to continue. ";
       currentRoom->setBlurb(tmp);
       cin.ignore();
       cin.get();
@@ -113,6 +115,7 @@ void Game::travel(Room* toTravel){
       tmp = currentRoom->getBlurb();
       currentRoom->setBlurb(" You can't go here yet!");
       currentRoom->printState();
+      cout << " Press enter to continue. ";
       currentRoom->setBlurb(tmp);
       cin.ignore();
       cin.get();

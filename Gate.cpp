@@ -9,7 +9,7 @@
 
 Gate::Gate(){
   setName("A gate to another dimension");
-  setBlurb(" The gate vibrates, shaking your bones and tearing at your mind");
+  setBlurb(" The gate vibrates, shaking your bones and tearing at your mind.");
   setGraphic("graphics/gate.txt");
 }
 
@@ -77,10 +77,10 @@ void Gate::explore(Player* player){
       setBlurb(" Professor: We're not ready to close the gate yet! We've got to study this monster first!");
     }
     else if(player->hasProfessor() && !player->hasTome()){
-      setBlurb(" Professor: We're not ready to close the gate yet! We've still got to grab the ancient tome!");
+      setBlurb(" Professor: We're not ready to close the gate yet! We've still got to grab the\n ancient tome!");
     }
     else if(!player->hasProfessor()){
-      setBlurb(" The mere proximity of the gate is enough to drive you insane. You touch your ear and find it slick with blood.");
+      setBlurb(" The mere proximity of the gate is enough to drive you insane. You touch your ear\n and find it slick with blood.");
       player->setSanity(player->getSanity() - 5);
     }
     printState();

@@ -9,7 +9,7 @@
 
 ScienceBuilding::ScienceBuilding(){
   setName("The Science Building");
-  setBlurb(" The scientists here seem unimpressed by the terrible gate that continues to drive you insane.");
+  setBlurb(" The scientists here seem unimpressed by the terrible gate that continues to drive\n you insane.");
   setGraphic("graphics/science.txt");
 }
 
@@ -28,7 +28,7 @@ void ScienceBuilding::explore(Player* player){
 
   if(player->hasProfessor() && player->hasMonster()){ // Turn monster in for the research notes
     hackyCinStuff = false;
-    setBlurb(" Professor: These scientists can help me dissect this fearsome beast! Let's see what we can learn...");
+    setBlurb(" Professor: These scientists can help me dissect this fearsome beast! Let's see what\n we can learn...");
     setGraphic("graphics/dissection.txt");
     player->setMonster(false);
     player->setPapers(true);
@@ -45,7 +45,7 @@ void ScienceBuilding::explore(Player* player){
     printState();
   }
   else if(player->hasTome() && player->hasPapers() && player->hasProfessor()){
-    setBlurb(" Professor: We've got everything we need to close that gate, let's get back to the courtyard!");
+    setBlurb(" Professor: We've got everything we need to close that gate, let's get back to the\n courtyard!");
     printState();
   }
   else if(player->hasProfessor() && player->hasPapers()){

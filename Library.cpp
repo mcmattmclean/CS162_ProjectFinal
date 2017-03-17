@@ -42,7 +42,7 @@ void Library::explore(Player* player){
       cin.get();
     }
 
-    setBlurb(" The combination lock goes from the numbers 1 - 35. It requires 3 numbers, a right pass,\n a left pass, then a second right pass. The school isn't known for their\n security, so what could it be...");
+    setBlurb(" The combination lock goes from the numbers 1 - 35. It requires 3 numbers, a right pass,\n a left pass, then a second right pass. The school isn't known for their security,\n so what could it be...");
     int stay = -1;
     do{
       do{

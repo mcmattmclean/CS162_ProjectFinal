@@ -41,14 +41,14 @@ void ProfessorRoom::explore(Player* player){
 
       // Control output for fight choices
       if(fightChoice == 1){
-        setBlurb(" Your strikes confuse the monster more then anything, its terrible eyes\n stare at you in disappointment.");
+        setBlurb(" Your strikes confuse the monster more then anything, its terrible eyes stare\n at you in disappointment.");
       }
       else if(fightChoice == 2){
         setBlurb(" The beast grabs you by the throat, and throws you against the wall.");
         player->setHealth(player->getHealth() - 50);
       }
       else if(fightChoice == 3){
-        setBlurb(" You maneuver around the monster, dodging its evil claws as it reaches\n for you. You grab the bookshelf and heave with all your might. It tumbles\n forward, crushing the horrible creature.\n\n You've acquired: A Monstrous Corpse");
+        setBlurb(" You maneuver around the monster, dodging its evil claws as it reaches for\n you. You grab the bookshelf and heave with all your might. It tumbles forward,\n crushing the horrible creature.\n\n You've acquired: A Monstrous Corpse");
         player->addItem("A Monstrous Corpse"); //Player must choose thise option to proceed
       }
       else if(fightChoice == 4){

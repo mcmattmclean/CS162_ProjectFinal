@@ -9,7 +9,7 @@
 
 Courtyard::Courtyard(){
   setName("The Courtyard");
-  setBlurb(" You finally arrive at Miskatonic University's courtyard, late yet again.\n Better hurry to Professor Harvey's office before he notices his least favorite TA's absence.");
+  setBlurb(" You finally arrive at Miskatonic University's courtyard, late yet again. Better\n hurry to Professor Harvey's office before he notices his least\n favorite TA's absence.");
   setGraphic("graphics/courtyard-intro.txt");
 }
 

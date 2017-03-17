@@ -12,7 +12,7 @@ SecretRoom::SecretRoom(){
   setAccessible(false);
   setVisible(false);
   setGraphic("graphics/secret-room.txt");
-  setBlurb(" The room is dusty and filled with cobwebs. In the center of the room on\n a pedestal is an ancient tome.");
+  setBlurb(" The room is dusty and filled with cobwebs. In the center of the room on a pedestal\n is an ancient tome.");
 }
 
 void SecretRoom::update(){}
