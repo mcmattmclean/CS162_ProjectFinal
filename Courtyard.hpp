@@ -12,9 +12,6 @@
 
 class Courtyard : public Room{
 private:
-  bool gatePresentOpen = false;  //When true, graphic switches to open
-  bool gatePresentClosed = false;  //When true, graphic switches to closed gate
-  bool firstVisit = true;
 public:
   Courtyard();
   void explore(Player*);
