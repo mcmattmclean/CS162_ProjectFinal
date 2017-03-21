@@ -31,7 +31,7 @@ void SecretRoom::explore(Player* player){
     setBlurb(" You grab the ancient tome from its pedestal. It's heavier than you expected.\n\n Item acquired: Ancient Tome");
     player->addItem("An Ancient Tome");
     tmp = "The room is dusty and filled with cobwebs.";
-    setGraphic("graphics/secret-room-tome");
+    setGraphic("graphics/secret-room-tome.txt");
   }
   else{
     setBlurb(" Professor: Alright, that's everything. I should be able to close that gate now!");

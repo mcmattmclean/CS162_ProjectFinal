@@ -10,6 +10,7 @@
 AdminBuilding::AdminBuilding(){
   setName("The Administration Building");
   setBlurb(" The hallway is quiet as usual. All the more disturbing after the scream you heard\n earlier.");
+  setGraphic("graphics/admin.txt");
 }
 
 void AdminBuilding::update(){}

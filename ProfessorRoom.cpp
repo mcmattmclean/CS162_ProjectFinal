@@ -10,7 +10,7 @@
 ProfessorRoom::ProfessorRoom(){
   setName("Professor Harvey's Office");
   setBlurb(" It's strangely quiet. You see what you think is blood pooling behind the desk...");
-  setGraphic("office.txt");
+  setGraphic("graphics/office.txt");
 }
 
 void ProfessorRoom::update(){}
@@ -52,7 +52,7 @@ void ProfessorRoom::explore(Player* player){
         player->addItem("A Monstrous Corpse"); //Player must choose thise option to proceed
       }
       else if(fightChoice == 4){
-        setBlurb(" What a foolish thing to do. The monster lurches toward you, and crushes your\n throat between its slick claws");
+        setBlurb(" What a foolish thing to do. The monster lurches toward you, and crushes your\n throat between its slick claws.");
         player->setHealth(0);
       }
 

@@ -28,6 +28,7 @@ void ScienceBuilding::explore(Player* player){
 
   if(player->hasProfessor() && player->hasMonster()){ // Turn monster in for the research notes
     hackyCinStuff = false;
+    string tmp = getGraphic();
     setBlurb(" Professor: These scientists can help me dissect this fearsome beast! Let's see what\n we can learn...");
     setGraphic("graphics/dissection.txt");
     player->setMonster(false);
@@ -41,8 +42,8 @@ void ScienceBuilding::explore(Player* player){
     cin.ignore();
     cin.get();
     setBlurb(" Professor: AHA! With these notes, we may stand a chance at closing that gate!\n\n You've acquired: Research Notes");
-    setGraphic("graphics/notes.txt");
     printState();
+    setGraphic(tmp);
   }
   else if(player->hasTome() && player->hasPapers() && player->hasProfessor()){
     setBlurb(" Professor: We've got everything we need to close that gate, let's get back to the\n courtyard!");

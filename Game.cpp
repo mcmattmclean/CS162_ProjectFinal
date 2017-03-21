@@ -229,7 +229,7 @@ void Game::run(){
       cout << endl;
     }
   }
-  cout << "Press enter to return to main menu.";
+  cout << " Press enter to return to main menu.";
   cin.get();
 }
 

@@ -10,7 +10,7 @@
 Library::Library(){
   setName("The Library");
   setBlurb(" The librarian ignores you, her nose down in a novel far more interesting than you.");
-  setGraphic(" graphics/library-locked.txt");
+  setGraphic("graphics/library-locked.txt");
 }
 
 void Library::update(){
@@ -111,7 +111,7 @@ void Library::explore(Player* player){
       setBlurb(" Professor: Lets get in there and grab that tome!");
     }
     else if(player->hasProfessor() && player->hasMonster()){
-      setBlurb(" Professor: This isn't the science building!");
+      setBlurb(" Professor: This corpse alone won't do us any good, we need to study it at the science\n building first!");
     }
     printState();
     cout << " Press enter to continue. ";
