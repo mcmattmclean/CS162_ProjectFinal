@@ -17,7 +17,6 @@ private:
   bool firstVisit = true;
 public:
   Courtyard();
-  void update();
   void explore(Player*);
 
 };

@@ -31,7 +31,6 @@ private:
 public:
   Room();
   virtual ~Room();
-  virtual void update() = 0;
   virtual void explore(Player*) = 0;
   void printState();
   void printMenu();

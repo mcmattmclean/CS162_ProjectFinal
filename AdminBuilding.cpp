@@ -13,8 +13,6 @@ AdminBuilding::AdminBuilding(){
   setGraphic("graphics/admin.txt");
 }
 
-void AdminBuilding::update(){}
-
 void AdminBuilding::explore(Player* player){
   string tmp = getBlurb(); //Clear the blurb
 

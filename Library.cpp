@@ -13,9 +13,6 @@ Library::Library(){
   setGraphic("graphics/library-locked.txt");
 }
 
-void Library::update(){
-}
-
 /******************************************************************************
 * Function: explore()
 *
@@ -100,6 +97,11 @@ void Library::explore(Player* player){
         }
       }
     }while(!player->hasUnlockedRoom() && stay == 1);
+    
+    if(stay == 2){
+      setGraphic(tmpG); //In case player backs out before even attempting combo
+    }
+
   }
   else{
     if(!player->hasProfessor()){  //Exploring before having the professor

@@ -13,8 +13,6 @@ ProfessorRoom::ProfessorRoom(){
   setGraphic("graphics/office.txt");
 }
 
-void ProfessorRoom::update(){}
-
 /******************************************************************************
 * Function: explore()
 *

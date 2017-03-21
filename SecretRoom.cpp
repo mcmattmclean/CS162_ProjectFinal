@@ -15,8 +15,6 @@ SecretRoom::SecretRoom(){
   setBlurb(" The room is dusty and filled with cobwebs. In the center of the room on a pedestal\n is an ancient tome.");
 }
 
-void SecretRoom::update(){}
-
 /******************************************************************************
 * Function: explore()
 *

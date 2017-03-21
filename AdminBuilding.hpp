@@ -14,7 +14,6 @@ class AdminBuilding : public Room{
 private:
 public:
   AdminBuilding();
-  void update();
   void explore(Player*);
 
 };

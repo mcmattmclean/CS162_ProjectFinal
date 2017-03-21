@@ -14,7 +14,6 @@ class ScienceBuilding : public Room{
 private:
 public:
   ScienceBuilding();
-  void update();
   void explore(Player*);
 
 

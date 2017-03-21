@@ -13,9 +13,6 @@ Courtyard::Courtyard(){
   setGraphic("graphics/courtyard-intro.txt");
 }
 
-void Courtyard::update(){
-}
-
 /******************************************************************************
 * Function: explore()
 *

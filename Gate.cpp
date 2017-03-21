@@ -13,8 +13,6 @@ Gate::Gate(){
   setGraphic("graphics/gate.txt");
 }
 
-void Gate::update(){}
-
 /******************************************************************************
 * Function: explore()
 *

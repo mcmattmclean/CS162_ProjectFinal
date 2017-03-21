@@ -13,8 +13,6 @@ ScienceBuilding::ScienceBuilding(){
   setGraphic("graphics/science.txt");
 }
 
-void ScienceBuilding::update(){}
-
 /******************************************************************************
 * Function: explore()
 *
@@ -41,7 +39,7 @@ void ScienceBuilding::explore(Player* player){
     cin.clear();
     cin.ignore();
     cin.get();
-    setBlurb(" Professor: AHA! With these notes, we may stand a chance at closing that gate!\n\n You've acquired: Research Notes");
+    setBlurb(" Professor: AHA! With these notes, we may stand a chance at closing that gate!\n\n You've acquired: Research Notes\n Removed: A Monstrous Corpse");
     printState();
     setGraphic(tmp);
   }

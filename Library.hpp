@@ -15,7 +15,6 @@ private:
   bool firstVisit = true;
 public:
   Library();
-  void update();
   void explore(Player*);
 
 

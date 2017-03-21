@@ -15,7 +15,6 @@ private:
   bool firstVisit = true;
 public:
   ProfessorRoom();
-  void update();
   void explore(Player*);
 
 
