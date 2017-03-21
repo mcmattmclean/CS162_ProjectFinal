@@ -23,6 +23,8 @@ void Library::update(){
 ******************************************************************************/
 void Library::explore(Player* player){
   string tmp = getBlurb();
+  string tmpG = getGraphic();
+
   if(player->hasProfessor() && player->hasPapers() && !player->hasUnlockedRoom()){ //Get tome path
 
     if(firstVisit){ //Only display this the first time they enter with the professor
@@ -35,13 +37,12 @@ void Library::explore(Player* player){
       cin.get();
 
       setBlurb(" Professor: Blasted thing! I haven't had to get into this room in quite a while, and my\n memory isn't what it used to be. Better keep trying combinations until we get in.");
-      setGraphic("graphics/bookshelf.txt");
       printState();
       cout << " Press enter to continue. ";
       cin.clear();
       cin.get();
     }
-
+    setGraphic("graphics/bookshelf.txt");
     setBlurb(" The combination lock goes from the numbers 1 - 35. It requires 3 numbers, a right pass,\n a left pass, then a second right pass. The school isn't known for their security,\n so what could it be...");
     int stay = -1;
     do{
@@ -80,7 +81,6 @@ void Library::explore(Player* player){
 
         if (firstNum == 12 && secondNum == 30 && thirdNum == 18){ //Check if correct
           setBlurb(" You hear a quiet hiss that grows lowder. Suddenly, the bookshelf swings open,\n revealing the secret room!");
-          setGraphic("graphics/puzzle-solved.txt");
           player->setUnlockedRoom(true);
           printState();
           cout << " Press enter to continue. ";
@@ -93,6 +93,7 @@ void Library::explore(Player* player){
           setBlurb(" You hear a faint whirring behind the bookshelf, but it quickly stops.");
           printState();
           cout << " Press enter to continue. ";
+          setGraphic(tmpG);
           cin.clear();
           cin.ignore();
           cin.get();
