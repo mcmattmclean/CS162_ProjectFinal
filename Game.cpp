@@ -134,13 +134,15 @@ void Game::travel(Room* toTravel){
 **  until the game is completed.
 ******************************************************************************/
 void Game::run(){
-  currentRoom->printState();  //Begin intro sequence
+  currentRoom->printState();  //Begin intro sequence in the courtyard
   cout << " Press enter to get moving. ";
   cin.ignore();
   cin.get();
-  refresh();
+  currentRoom->setGraphic("graphics/courtyard-gate.txt");
+  currentRoom->setBlurb(" Before you take a single step, a terrible gate appears, emanating death. The buildings\n near it sprout giant tentacles, and you feel your sanity slipping away as the seconds\n pass. You hear a scream from the direction of the administration building.");
   currentRoom->printState();
   cout << " Press enter to continue. ";
+  currentRoom->setBlurb(" The massive gateway pulses, filling you with dread.");
   cin.get(); //End intro sequence
 
   while(!gameOver){
@@ -234,7 +236,6 @@ void Game::run(){
 }
 
 void Game::refresh(){
-  currentRoom->update();
   if(player.hasUnlockedRoom()){
     sroom->setAccessible(true);
     sroom->setVisible(true);

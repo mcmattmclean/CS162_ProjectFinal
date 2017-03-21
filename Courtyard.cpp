@@ -14,19 +14,6 @@ Courtyard::Courtyard(){
 }
 
 void Courtyard::update(){
-  if(gatePresentClosed){
-    setGraphic("graphics/courtyard-gateclosed.txt");
-    setBlurb(" The gate is shut, and the university is safe. For now...");
-  }
-  else if(gatePresentOpen){
-    setBlurb(" The massive gateway pulses, filling you with dread.");
-  }
-  else if(firstVisit){
-    firstVisit = false;
-    gatePresentOpen = true;
-    setGraphic("graphics/courtyard-gate.txt");
-    setBlurb(" Before you take a single step, a terrible gate appears, emanating death. The buildings\n near it sprout giant tentacles, and you feel your sanity slipping away as the seconds\n pass. You hear a scream from the direction of the administration building.");
-  }
 }
 
 /******************************************************************************

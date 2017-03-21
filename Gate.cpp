@@ -36,19 +36,22 @@ void Gate::explore(Player* player){
     cin.ignore();
     cin.get();
 
-    setBlurb(" The professor chants the ancient rites from the tome, checking his notes as he goes.\n The gate continues to writhe, the buildings tentacles suddenly turning toward you.");
+    setBlurb(" The professor chants the ancient rites from the tome, checking his notes as he goes.\n The portal continues to writhe, the buildings tentacles suddenly turning toward you.");
+    setGraphic("graphics/chant.txt");
     printState();
     cout << " Press enter to continue. ";
     cin.clear();
     cin.get();
 
     setBlurb(" A massive tentacle raises above you, poised to smash you to bits. The professor\n continues to chant, sweat pouring down his brow, blood beginning to drip from\n his ears and eyes.");
+    setGraphic("graphics/tentacle.txt");
     printState();
     cout << " Press enter to continue. ";
     cin.clear();
     cin.get();
 
     setBlurb(" As the tentacle swings down, you close your eyes, accepting your fate.");
+    setGraphic(""); //Set blank graphic
     printState();
     cout << " Press enter to continue. ";
     cin.clear();
@@ -61,6 +64,7 @@ void Gate::explore(Player* player){
     cin.get();
 
     setBlurb(" Sudden silence. Broken by the chirp of a bird. You open your eyes and see that\n the gate is closed, and everything is back to normal.");
+    setGraphic("graphics/courtyard-gateclosed.txt");
     printState();
     cout << " Press enter to continue. ";
     cin.clear();
@@ -73,6 +77,7 @@ void Gate::explore(Player* player){
     cin.get();
   }
   else{
+    string tmpG = getGraphic();
     if(player->hasProfessor() && player->hasMonster()){
       setBlurb(" Professor: We're not ready to close the gate yet! We've got to study this monster first!");
     }
@@ -81,9 +86,11 @@ void Gate::explore(Player* player){
     }
     else if(!player->hasProfessor()){
       setBlurb(" The mere proximity of the gate is enough to drive you insane. You touch your ear\n and find it slick with blood.");
+      setGraphic("graphics/gate-pulse.txt");
       player->setSanity(player->getSanity() - 5);
     }
     printState();
+    setGraphic(tmpG);
     cout << " Press enter to continue. ";
     cin.clear();
     cin.ignore();
