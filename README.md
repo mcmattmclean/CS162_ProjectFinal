@@ -40,3 +40,14 @@ Testing Help:
 
 Going to the gate before having the professor, you can explore the gate to lose 6 sanity at a time.
 This can help test the gameOver condition for sanity loss.
+
+CREDIT FOR GRAPHIC GENERATION:
+
+http://my.asciiart.club/
+
+I used asciiart.club to generate the graphics for the monster, the gate, the tentacle, and the
+tome, and the tree in the courtyard.
+
+http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
+
+I used parorjk.com to generate the main title screen, and the win and lose screens.
