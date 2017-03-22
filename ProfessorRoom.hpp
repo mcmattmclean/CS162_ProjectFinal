@@ -17,7 +17,6 @@ public:
   ProfessorRoom();
   void explore(Player*);
 
-
 };
 
 

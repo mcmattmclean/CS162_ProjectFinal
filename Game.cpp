@@ -7,7 +7,6 @@
 ******************************************************************************/
 #include "Game.hpp"
 
-
 /******************************************************************************
 * Function: Game() constructor
 *
@@ -57,7 +56,6 @@ Game::~Game(){
   delete profRoom;
 }
 
-
 /******************************************************************************
 * Function: startGame()
 *
@@ -74,7 +72,7 @@ bool Game::startGame(){
     for(int i = 0; i < numPadding; i ++){
       cout << endl;
     }
-    cout << " TA: Please see README.md for detailed description of where to go/puzzle answers!\n" << endl; //TODO: remove
+    cout << " TA: Please see README.md for detailed description of where to go/puzzle answers!\n" << endl;
     cout << " 1) Play Game" << endl << " 2) Quit" << endl;
     cout << " >>  ";
     choice = validateInt(1, 2);
@@ -101,7 +99,7 @@ bool Game::startGame(){
 ******************************************************************************/
 void Game::travel(Room* toTravel){
   string tmp;
-  if(toTravel == nullptr){
+  if(toTravel == nullptr){//Don't proceed if there's no room this way
     tmp = currentRoom->getBlurb();
     currentRoom->setBlurb(" There's nowhere to go that way.");
     currentRoom->printState();
@@ -130,9 +128,8 @@ void Game::travel(Room* toTravel){
       cin.get();
     }
     else{
-      currentRoom = toTravel;
+      currentRoom = toTravel; //If all checks pass, move to new room
     }
-
   }
 }
 
@@ -154,7 +151,7 @@ void Game::run(){
   currentRoom->setBlurb(" The massive gateway pulses, filling you with dread.");
   cin.get(); //End intro sequence
 
-  while(!gameOver){
+  while(!gameOver){ //Continue until player dies or gate is closed
     int menuChoice;
     //Loop printing the current graphic and waiting for valid input
     do{
@@ -167,12 +164,15 @@ void Game::run(){
 
     if(menuChoice == 1){  //Travel option
       int travelChoice = -1;
+
+      //Print travel sub menu and loop until valid user input
       do{
         currentRoom->printState();
         currentRoom->travelMenu();
         cout << " >>  ";
         travelChoice = validateInt(1, 5);
       }while(travelChoice == -1);
+
       if(travelChoice == 1){
         travel(currentRoom->getNorth());
       }
@@ -198,7 +198,7 @@ void Game::run(){
       }
       else{
         cout << " Your bag contains: " << endl;
-        for(unsigned int i = 0; i < userBag->size(); i++){
+        for(unsigned int i = 0; i < userBag->size(); i++){//Print each item in bag
           cout << ' ' << (*userBag)[i] << endl;
         }
       }
@@ -209,14 +209,14 @@ void Game::run(){
     }
 
     if(menuChoice == 3){  // Explore option
-      currentRoom->explore(&player);
+      currentRoom->explore(&player);  //Explore logic handled by individual room
     }
 
-    refresh();  //Updates room info, subtracts sanity
+    refresh();  //Updates room info, checks for game over, subtracts sanity
   }
 
   //Game is over, so determine win or lose
-  if(player.getSanity() <= 0 || player.getHealth() <= 0){
+  if(player.getSanity() <= 0 || player.getHealth() <= 0){ //Loss conditions
     int padding = getPadding(0, windowHeight, "graphics/lose.txt");
     for(int i = 0; i < padding; i++){
       cout << endl;
@@ -251,11 +251,11 @@ void Game::refresh(){
   if(player.getSanity() <= 0 || player.getHealth() <= 0){
     gameOver = true;
   }
-  if(player.hasUnlockedRoom()){
+  if(player.hasUnlockedRoom()){ //Check for secret room status
     sroom->setAccessible(true);
     sroom->setVisible(true);
   }
-  if(player.hasClosedGate()){
+  if(player.hasClosedGate()){ //Check for win condition
     gameOver = true;
   }
 }

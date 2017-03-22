@@ -7,6 +7,11 @@
 ******************************************************************************/
 #include "ProfessorRoom.hpp"
 
+/******************************************************************************
+* Constructor
+*
+* Description: Sets name, blurb, and graphic.
+******************************************************************************/
 ProfessorRoom::ProfessorRoom(){
   setName("Professor Harvey's Office");
   setBlurb(" It's strangely quiet. You see what you think is blood pooling behind the desk...");
@@ -47,7 +52,7 @@ void ProfessorRoom::explore(Player* player){
       }
       else if(fightChoice == 3){
         setBlurb(" You maneuver around the monster, dodging its evil claws as it reaches for\n you. You grab the bookshelf and heave with all your might. It tumbles forward,\n crushing the horrible creature.\n\n You've acquired: A Monstrous Corpse");
-        player->addItem("A Monstrous Corpse"); //Player must choose thise option to proceed
+        player->addItem("A Monstrous Corpse"); //Player must choose this option to proceed
       }
       else if(fightChoice == 4){
         setBlurb(" What a foolish thing to do. The monster lurches toward you, and crushes your\n throat between its slick claws.");
@@ -74,7 +79,7 @@ void ProfessorRoom::explore(Player* player){
       setBlurb(" The office is a complete mess.");
     }
   }
-  else{
+  else{//If not the first visit, choose correct blurb
     string tmp = getBlurb();
     if((player->hasTome() && player->hasProfessor()) || (player->hasPapers() && player->hasProfessor())){
       setBlurb(" Professor: There isn't anything left here, stop snooping around my things and move!");

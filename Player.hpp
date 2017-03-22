@@ -1,3 +1,11 @@
+/******************************************************************************
+* Name: Player.hpp
+* Date: 14 Mar 2017
+* Author: Matthew McLean
+* Description: Player class header file, contains member function prototypes
+**  and private member variables. Used to hold most game state variables as
+**  well as the player's inventory.
+******************************************************************************/
 #ifndef PLAYER_HPP
 #define PLAYER_HPP
 

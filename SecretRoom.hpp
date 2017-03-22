@@ -17,8 +17,6 @@ public:
   SecretRoom();
   void explore(Player*);
 
-
-
 };
 
 

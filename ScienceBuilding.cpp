@@ -7,6 +7,11 @@
 ******************************************************************************/
 #include "ScienceBuilding.hpp"
 
+/******************************************************************************
+* Constructor
+*
+* Description: Sets name, blurb, and graphic.
+******************************************************************************/
 ScienceBuilding::ScienceBuilding(){
   setName("The Science Building");
   setBlurb(" The scientists here seem unimpressed by the terrible gate that continues to drive\n you insane.");
@@ -22,7 +27,7 @@ ScienceBuilding::ScienceBuilding(){
 ******************************************************************************/
 void ScienceBuilding::explore(Player* player){
   string tmp = getBlurb();
-  bool hackyCinStuff = true;
+  bool hackyCinStuff = true; //Workaround for when calling cin.ignore() twice making user press enter twice before it's recognized
 
   if(player->hasProfessor() && player->hasMonster()){ // Turn monster in for the research notes
     hackyCinStuff = false;
@@ -57,7 +62,7 @@ void ScienceBuilding::explore(Player* player){
   }
   cout << " Press enter to continue. ";
   cin.clear();
-  if(hackyCinStuff){
+  if(hackyCinStuff){//See hackyCinStuff declaration above
     cin.ignore();
   }
   cin.get();

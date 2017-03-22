@@ -7,6 +7,11 @@
 ******************************************************************************/
 #include "SecretRoom.hpp"
 
+/******************************************************************************
+* Constructor
+*
+* Description: Sets name, blurb, graphic, and visibility and accessibility.
+******************************************************************************/
 SecretRoom::SecretRoom(){
   setName("A secret room behind a bookshelf");
   setAccessible(false);
@@ -24,7 +29,7 @@ SecretRoom::SecretRoom(){
 void SecretRoom::explore(Player* player){
   string tmp = getBlurb();
 
-  if(firstVisit){
+  if(firstVisit){ //Add tome to inventory if first visit, else print professor message
     firstVisit = false;
     setBlurb(" You grab the ancient tome from its pedestal. It's heavier than you expected.\n\n Item acquired: Ancient Tome");
     player->addItem("An Ancient Tome");

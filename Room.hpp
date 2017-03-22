@@ -5,7 +5,6 @@
 * Description: Abstract class Room header file, contains protected member
 **  variable declarations and member function prototypes.
 ******************************************************************************/
-
 #ifndef ROOM_HPP
 #define ROOM_HPP
 

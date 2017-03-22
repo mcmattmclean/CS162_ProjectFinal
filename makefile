@@ -1,3 +1,8 @@
+# Filename: makefile
+# Author: Matthew McLean
+# Date: March 21, 2017
+# Description: Makefile for the final project for CS162, Winter 2017
+
 CXX = g++
 CXXFLAGS = -std=c++0x -pedantic-errors -Wall
 OBJS = main.o util.o Game.o Player.o Room.o Courtyard.o Gate.o Library.o

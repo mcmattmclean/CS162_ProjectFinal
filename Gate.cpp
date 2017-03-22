@@ -7,6 +7,11 @@
 ******************************************************************************/
 #include "Gate.hpp"
 
+/******************************************************************************
+* Constructor
+*
+* Description: Sets name, blurb, and graphic.
+******************************************************************************/
 Gate::Gate(){
   setName("A gate to another dimension");
   setBlurb(" The gate vibrates, shaking your bones and tearing at your mind.");
@@ -74,7 +79,7 @@ void Gate::explore(Player* player){
     cout << " Press enter to continue. ";
     cin.get();
   }
-  else{
+  else{ //If not finale sequence time, check which message/graphic to display
     string tmpG = getGraphic();
     if(player->hasProfessor() && player->hasMonster()){
       setBlurb(" Professor: We're not ready to close the gate yet! We've got to study this monster first!");
@@ -88,7 +93,7 @@ void Gate::explore(Player* player){
       player->setSanity(player->getSanity() - 5);
     }
     printState();
-    setGraphic(tmpG);
+    setGraphic(tmpG);//Set back to original graphic
     cout << " Press enter to continue. ";
     cin.clear();
     cin.ignore();

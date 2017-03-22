@@ -7,6 +7,11 @@
 ******************************************************************************/
 #include "Library.hpp"
 
+/******************************************************************************
+* Constructor
+*
+* Description: Sets name, blurb, and graphic.
+******************************************************************************/
 Library::Library(){
   setName("The Library");
   setBlurb(" The librarian ignores you, her nose down in a novel far more interesting than you.");
@@ -42,8 +47,8 @@ void Library::explore(Player* player){
     setGraphic("graphics/bookshelf.txt");
     setBlurb(" The combination lock goes from the numbers 1 - 35. It requires 3 numbers, a right pass,\n a left pass, then a second right pass. The school isn't known for their security,\n so what could it be...");
     int stay = -1;
-    do{
-      do{
+    do{//Loop menu and solve attempt until successful or player leaves
+      do{//Print combination menu until valid input
         printState();
         cout << " 1) Solve" << endl;
         cout << " 2) Leave" << endl;
@@ -57,19 +62,19 @@ void Library::explore(Player* player){
 
       if(stay == 1){  //Get combo from user
         stay = -1;
-        do{
+        do{//Loop until input valid
           printState();
           cout << " Enter the first number:" << endl;
           cout << " >>  ";
           firstNum = validateInt(1, 35);
         }while(firstNum == -1);
-        do{
+        do{//Loop until input valid
           printState();
           cout << " Enter the second number:" << endl;
           cout << " >>  ";
           secondNum = validateInt(1, 35);
         }while(secondNum == -1);
-        do{
+        do{//Loop until input valid
           printState();
           cout << " Enter the third number:" << endl;
           cout << " >>  ";
@@ -86,7 +91,7 @@ void Library::explore(Player* player){
           cin.get();
           setGraphic("graphics/library-unlocked.txt");
         }
-        else{
+        else{//If incorrect
           setBlurb(" You hear a faint whirring behind the bookshelf, but it quickly stops.");
           printState();
           cout << " Press enter to continue. ";
@@ -97,7 +102,7 @@ void Library::explore(Player* player){
         }
       }
     }while(!player->hasUnlockedRoom() && stay == 1);
-    
+
     if(stay == 2){
       setGraphic(tmpG); //In case player backs out before even attempting combo
     }

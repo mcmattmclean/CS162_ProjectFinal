@@ -16,7 +16,6 @@ public:
   Gate();
   void explore(Player*);
 
-
 };
 
 

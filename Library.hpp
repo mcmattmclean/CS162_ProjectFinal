@@ -17,7 +17,6 @@ public:
   Library();
   void explore(Player*);
 
-
 };
 
 

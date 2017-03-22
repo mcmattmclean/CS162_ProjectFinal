@@ -7,6 +7,11 @@
 ******************************************************************************/
 #include "Courtyard.hpp"
 
+/******************************************************************************
+* Constructor
+*
+* Description: Sets name, blurb, and graphic.
+******************************************************************************/
 Courtyard::Courtyard(){
   setName("The Courtyard");
   setBlurb(" You finally arrive at Miskatonic University's courtyard, late yet again. Better\n hurry to Professor Harvey's office before he notices his least favorite TA's\n absence.");

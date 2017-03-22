@@ -16,8 +16,6 @@ public:
   ScienceBuilding();
   void explore(Player*);
 
-
-
 };
 
 
