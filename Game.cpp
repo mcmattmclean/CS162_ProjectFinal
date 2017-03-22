@@ -148,7 +148,7 @@ void Game::run(){
   currentRoom->setBlurb(" Before you take a single step, a terrible gate appears, emanating death. The buildings\n near it sprout giant tentacles, and you feel your sanity slipping away as the seconds\n pass. You hear a scream from the direction of the administration building.");
   currentRoom->printState();
   cout << " Press enter to continue. ";
-  currentRoom->setBlurb(" The massive gateway pulses, filling you with dread.");
+  currentRoom->setBlurb(" The massive gateway pulses, filling you with dread. It must be closed before you lose\n your mind!");
   cin.get(); //End intro sequence
 
   while(!gameOver){ //Continue until player dies or gate is closed
