@@ -48,7 +48,6 @@ public:
   void addMenu(string);
   int getMenuSize();
   vector<string>* getMenu();
-  void clearMenu();
   void setNorth(Room*);
   void setSouth(Room*);
   void setEast(Room*);

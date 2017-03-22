@@ -61,9 +61,8 @@ Game::~Game(){
 /******************************************************************************
 * Function: startGame()
 *
-* Description: First prints the setup screen for the game, allowing the user to
-**  resize their screen as appropriate. Then starts the main menu for the game,
-**  prompting user to either start the game or quit.
+* Description: Displays the main menu for the game, prompting user to either
+**  start the game or quit.
 ******************************************************************************/
 bool Game::startGame(){
   int choice = -1;
@@ -75,6 +74,7 @@ bool Game::startGame(){
     for(int i = 0; i < numPadding; i ++){
       cout << endl;
     }
+    cout << " TA: Please see README.md for detailed description of where to go/puzzle answers!\n" << endl; //TODO: remove
     cout << " 1) Play Game" << endl << " 2) Quit" << endl;
     cout << " >>  ";
     choice = validateInt(1, 2);
@@ -90,6 +90,15 @@ bool Game::startGame(){
   return play;
 }
 
+/******************************************************************************
+* Function: travel()
+*
+* Description: Takes the room pointer where the player wants to travel to as a
+**  parameter. If this is null, prints that there is nowhere to go that direction,
+**  and exits. If not null, then it checks if the room is visible and accessible,
+**  outputting proper messages for each if either check fails. If both are true,
+**  then the currentRoom pointer points to the passed room pointer.
+******************************************************************************/
 void Game::travel(Room* toTravel){
   string tmp;
   if(toTravel == nullptr){
@@ -102,7 +111,7 @@ void Game::travel(Room* toTravel){
     cin.get();
   }
   else{
-    if(toTravel->getVisible() == false){
+    if(toTravel->getVisible() == false){//Check for visibility
       tmp = currentRoom->getBlurb();
       currentRoom->setBlurb(" Doesn't look like you can go this way... Unless...");
       currentRoom->printState();
@@ -111,7 +120,7 @@ void Game::travel(Room* toTravel){
       cin.ignore();
       cin.get();
     }
-    else if(toTravel->getAccessible() == false){
+    else if(toTravel->getAccessible() == false){//Check for accessibility
       tmp = currentRoom->getBlurb();
       currentRoom->setBlurb(" You can't go here yet!");
       currentRoom->printState();
@@ -199,18 +208,14 @@ void Game::run(){
       cin.get();
     }
 
-    if(menuChoice == 3){
+    if(menuChoice == 3){  // Explore option
       currentRoom->explore(&player);
     }
 
-    player.setSanity(player.getSanity()-1); //After every game choice, sanity decreases by 1
-    if(player.getSanity() <= 0 || player.getHealth() <= 0){
-      gameOver = true;
-    }
-
-    refresh();  //Updates room info
+    refresh();  //Updates room info, subtracts sanity
   }
 
+  //Game is over, so determine win or lose
   if(player.getSanity() <= 0 || player.getHealth() <= 0){
     int padding = getPadding(0, windowHeight, "graphics/lose.txt");
     for(int i = 0; i < padding; i++){
@@ -235,7 +240,17 @@ void Game::run(){
   cin.get();
 }
 
+
+/******************************************************************************
+* Function: refresh()
+*
+* Description:
+******************************************************************************/
 void Game::refresh(){
+  player.setSanity(player.getSanity()-1); //After every game choice, sanity decreases by 1
+  if(player.getSanity() <= 0 || player.getHealth() <= 0){
+    gameOver = true;
+  }
   if(player.hasUnlockedRoom()){
     sroom->setAccessible(true);
     sroom->setVisible(true);

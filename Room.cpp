@@ -148,9 +148,3 @@ void Room::printMenu(){
     cout << ' ' << i+1 << ") " << menuList[i] << endl;
   }
 }
-
-void Room::clearMenu(){
-  while(menuList.size() > 0){
-    menuList.clear();
-  }
-}
