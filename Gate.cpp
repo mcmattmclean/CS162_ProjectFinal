@@ -26,7 +26,7 @@ void Gate::explore(Player* player){
 
   string tmp = getBlurb();
 
-  if(player->hasTome() && player->hasPapers() && player->hasProfessor()){
+  if(player->hasTome() && player->hasPapers() && player->hasProfessor()){ //Execute finale sequence if all conditions met
     setBlurb(" Professor: Alright, here goes nothing!");
     printState();
     cout << " Press enter to continue. ";
@@ -69,7 +69,7 @@ void Gate::explore(Player* player){
     cin.get();
 
     setBlurb(" Professor: Well then, that was anticlimactic. Ah well, back to grading those papers!");
-    player->setClosedGate(true);
+    player->setClosedGate(true);  //Triggers gameOver in Game::run()
     printState();
     cout << " Press enter to continue. ";
     cin.get();
