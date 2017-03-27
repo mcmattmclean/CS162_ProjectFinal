@@ -72,7 +72,6 @@ bool Game::startGame(){
     for(int i = 0; i < numPadding; i ++){
       cout << endl;
     }
-    cout << " TA: Please see README.md for detailed description of where to go/puzzle answers!\n" << endl;
     cout << " 1) Play Game" << endl << " 2) Quit" << endl;
     cout << " >>  ";
     choice = validateInt(1, 2);
