@@ -2,7 +2,7 @@
 * Name: main.cpp
 * Date: 20 Mar 2017
 * Author: Matthew McLean
-* Description: The main function for CS162's final project. Allows for multiple
+* Description: The main function for Miskatonic Madness. Allows for multiple
 **  run-throughs of the game. main controls which game functions are called
 **  based on user input processed by Game functions.
 ******************************************************************************/
