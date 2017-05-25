@@ -4,7 +4,14 @@ This is a basic little text game I created inspired by the Arkham Horror board g
 around the Miskatonic University, exploring the world around them and trying to gather the necessary
 materials to close a gate opened by the old ones before the player's constantly draining sanity runs out.
 
-BEATING THE GAME (Spoilers!):
+
+# Installation
+
+Clone the git repository, then run `make` in the directory created.
+Run `./Miskatonic` to start the game.
+
+
+# Beating the Game (Spoilers!):
 
 You start in the courtyard. Move west to the Administration Building, then north to Professor Harvey's
 office. Once in the office, explore. A monster will appear and you will have four options.
@@ -41,7 +48,7 @@ Testing Help:
 Going to the gate before having the professor, you can explore the gate to lose 6 sanity at a time.
 This can help test the gameOver condition for sanity loss.
 
-CREDIT FOR GRAPHIC GENERATION:
+# Credit for Graphic Generation:
 
 http://my.asciiart.club/
 
