@@ -7,7 +7,7 @@ CXX = g++
 CXXFLAGS = -std=c++0x -pedantic-errors -Wall
 OBJS = main.o util.o Game.o Player.o Room.o Courtyard.o Gate.o Library.o
 OBJS += SecretRoom.o ScienceBuilding.o AdminBuilding.o ProfessorRoom.o
-EXECUTABLE = project_test
+EXECUTABLE = Miskatonic
 
 all: ${OBJS}
 	${CXX} ${OBJS} -o ${EXECUTABLE}
