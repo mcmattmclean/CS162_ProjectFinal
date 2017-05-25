@@ -8,7 +8,7 @@ materials to close a gate opened by the old ones before the player's constantly 
 # Installation
 
 Clone the git repository, then run `make` in the directory created.
-Run `./Miskatonic` to start the game.
+Start the game with `./Miskatonic`.
 
 
 # Beating the Game (Spoilers!):
